@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 25cdc2ee185f07a4c9fd0627a38813ed
+timeCreated: 1522814543
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_0
+    21300002: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_1
+    21300004: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_2
+    21300006: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_3
+    21300008: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_4
+    21300010: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_5
+    21300012: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_6
+    21300014: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_7
+    21300016: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_8
+    21300018: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_9
+    21300020: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_10
+    21300022: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_11
+    21300024: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_12
+    21300026: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_13
+    21300028: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_14
+    21300030: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_15
+    21300032: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_16
+    21300034: "1\u8FC7\u5173\u5B57"
+    21300036: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_18
+    21300038: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_19
+    21300040: "2\u661F\u661F"
+    21300042: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_21
+    21300044: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_22
+    21300046: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_23
+    21300048: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_24
+    21300050: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_25
+    21300052: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_26
+    21300054: "0\u5BF9\u94A9"
+    21300056: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_28
+    21300058: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_29
+    21300060: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_30
+    21300062: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_31
+    21300064: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_32
+    21300066: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_33
+    21300068: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_34
+    21300070: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_35
+    21300072: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_36
+    21300074: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_37
+    21300076: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_38
+    21300078: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_39
+    21300080: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_40
+    21300082: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_41
+    21300084: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_42
+    21300086: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_43
+    21300088: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_44
+    21300090: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_45
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 257
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 399
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 456
+        width: 268
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 222
+        width: 81
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_4
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 257
+        width: 18
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 148
+        width: 135
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_6
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 409
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_8
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_9
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_10
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 409
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_11
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 409
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_12
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_13
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_14
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 409
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_15
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 409
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_16
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 342
+        width: 311
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "1\u8FC7\u5173\u5B57"
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 289
+        width: 309
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_18
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 170
+        width: 160
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_19
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 190
+        width: 151
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "2\u661F\u661F"
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 124
+        width: 157
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_21
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 36
+        width: 42
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_22
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 214
+        width: 120
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_23
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 83
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_24
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 87
+        width: 78
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_25
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 105
+        width: 74
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_26
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 121
+        width: 298
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "0\u5BF9\u94A9"
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 159
+        width: 62
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 277
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_29
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 8
+        width: 58
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_30
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 119
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_31
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 58
+        width: 31
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_32
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 48
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_33
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 80
+        width: 119
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_34
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 62
+        width: 61
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_35
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 80
+        width: 120
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_36
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 12
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_37
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 12
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_38
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 28
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_39
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 18
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_40
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 11
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_41
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 9
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_42
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 29
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_43
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 38
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_44
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 42
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: panel_game_start.6a6423d74614d237f9ed8cfd4fa6a665_45
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 10
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

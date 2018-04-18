@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 9ddf0f3868525414c81c6bd97c291a6b
+timeCreated: 1522820752
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_0
+    21300002: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_1
+    21300004: "0\u732B\u5934\u9E70"
+    21300006: "1\u718A"
+    21300008: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_4
+    21300010: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_5
+    21300012: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_6
+    21300014: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_7
+    21300016: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_8
+    21300018: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_9
+    21300020: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_10
+    21300022: "2\u9A6C"
+    21300024: "4\u9E21\u4ED4"
+    21300026: "5\u72D0\u72F8"
+    21300028: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_14
+    21300030: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_15
+    21300032: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_16
+    21300034: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_17
+    21300036: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_18
+    21300038: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_19
+    21300040: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_20
+    21300042: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_21
+    21300044: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_22
+    21300046: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_23
+    21300048: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_24
+    21300050: "6\u9752\u86D9"
+    21300052: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_26
+    21300054: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_27
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 273
+        width: 76
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 264
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "0\u732B\u5934\u9E70"
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 227
+        width: 67
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "1\u718A"
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 225
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_4
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 223
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 223
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_6
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 223
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 159
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_9
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 159
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_10
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 159
+        width: 68
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "2\u9A6C"
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 157
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "4\u9E21\u4ED4"
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 155
+        width: 65
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "5\u72D0\u72F8"
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 155
+        width: 69
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_15
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_16
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_17
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_18
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_19
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_20
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 84
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_22
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 13
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_23
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 13
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_24
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 12
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: "6\u9752\u86D9"
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 12
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_26
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 9
+        width: 14
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mapBaseItem.0b4ae9fcb4424b1c87b4669fa3e3191c_27
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 0
+        width: 84
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

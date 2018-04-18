@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBox1.Plugins", "GameBox1.Plugins.csproj", "{D405D033-C771-83FC-C255-EFC5C22180E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameBox1", "GameBox1.csproj", "{87EDD08F-DAD9-0040-4C84-A14CD4A17FAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D405D033-C771-83FC-C255-EFC5C22180E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D405D033-C771-83FC-C255-EFC5C22180E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D405D033-C771-83FC-C255-EFC5C22180E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D405D033-C771-83FC-C255-EFC5C22180E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87EDD08F-DAD9-0040-4C84-A14CD4A17FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EDD08F-DAD9-0040-4C84-A14CD4A17FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EDD08F-DAD9-0040-4C84-A14CD4A17FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EDD08F-DAD9-0040-4C84-A14CD4A17FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

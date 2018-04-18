@@ -1,0 +1,518 @@
+fileFormatVersion: 2
+guid: 6ba2657cf69c261418119b361470b894
+timeCreated: 1522812879
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ui-common.1a2b227aa22b0c32406813693e41facd_0
+    21300002: ui-common.1a2b227aa22b0c32406813693e41facd_1
+    21300004: ui-common.1a2b227aa22b0c32406813693e41facd_2
+    21300006: ui-common.1a2b227aa22b0c32406813693e41facd_3
+    21300008: ui-common.1a2b227aa22b0c32406813693e41facd_4
+    21300010: ui-common.1a2b227aa22b0c32406813693e41facd_5
+    21300012: ui-common.1a2b227aa22b0c32406813693e41facd_6
+    21300014: ui-common.1a2b227aa22b0c32406813693e41facd_7
+    21300016: ui-common.1a2b227aa22b0c32406813693e41facd_8
+    21300018: ui-common.1a2b227aa22b0c32406813693e41facd_9
+    21300020: ui-common.1a2b227aa22b0c32406813693e41facd_10
+    21300022: ui-common.1a2b227aa22b0c32406813693e41facd_11
+    21300024: ui-common.1a2b227aa22b0c32406813693e41facd_12
+    21300026: ui-common.1a2b227aa22b0c32406813693e41facd_13
+    21300028: 1
+    21300030: ui-common.1a2b227aa22b0c32406813693e41facd_15
+    21300032: ui-common.1a2b227aa22b0c32406813693e41facd_16
+    21300034: ui-common.1a2b227aa22b0c32406813693e41facd_17
+    21300036: ui-common.1a2b227aa22b0c32406813693e41facd_18
+    21300038: ui-common.1a2b227aa22b0c32406813693e41facd_19
+    21300040: ui-common.1a2b227aa22b0c32406813693e41facd_20
+    21300042: ui-common.1a2b227aa22b0c32406813693e41facd_21
+    21300044: ui-common.1a2b227aa22b0c32406813693e41facd_22
+    21300046: ui-common.1a2b227aa22b0c32406813693e41facd_23
+    21300048: ui-common.1a2b227aa22b0c32406813693e41facd_24
+    21300050: 0
+    21300052: ui-common.1a2b227aa22b0c32406813693e41facd_26
+    21300054: ui-common.1a2b227aa22b0c32406813693e41facd_27
+    21300056: ui-common.1a2b227aa22b0c32406813693e41facd_28
+    21300058: ui-common.1a2b227aa22b0c32406813693e41facd_29
+    21300060: ui-common.1a2b227aa22b0c32406813693e41facd_30
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 419
+        width: 276
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 445
+        width: 276
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_2
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 443
+        width: 276
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_3
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 500
+        width: 141
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_4
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 309
+        width: 245
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_5
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 391
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_6
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 328
+        width: 276
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_7
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 428
+        width: 135
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 238
+        width: 169
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_9
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 350
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_10
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 363
+        width: 136
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 189
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_12
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 194
+        width: 244
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_13
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 201
+        width: 233
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 1
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 215
+        width: 229
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_15
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 83
+        width: 226
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_16
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 133
+        width: 141
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 143
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_18
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 109
+        width: 277
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_19
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 148
+        width: 35
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_20
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 107
+        width: 227
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_21
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 101
+        width: 186
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_22
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 113
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 74
+        width: 219
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_24
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 74
+        width: 357
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 0
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 2
+        width: 227
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_26
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 65
+        width: 219
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 44
+        width: 220
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_28
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 44
+        width: 220
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_29
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 44
+        width: 185
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ui-common.1a2b227aa22b0c32406813693e41facd_30
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 15
+        width: 186
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
