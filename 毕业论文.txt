@@ -1,0 +1,2648 @@
+目    录
+
+一．需求分析	2
+1.1 手机游戏的发展趋势	2
+1.2游戏开发平台	2
+1.3.任务概述：	3
+1.3.1 目标	3
+1.3.2用户特点	4
+1.3.3运行环境	4
+1.3.4 条件和限制	4
+二．设计与实现	4
+2.1    2048 游戏设计与实现	4
+2.1.1  2048游戏概要设计	4
+2.1.2  详细设计	5
+2.2 愤怒的小鸟 游戏设计与实现	16
+2.2.1 愤怒的小鸟游戏 概要设计	16
+2.2.2 详细设计	19
+2.3记忆力翻牌游戏设计与实现	33
+2.3.1概要设计	33
+2.3.2详细设计	34
+三．参考文献	37
+四．总结	38
+五．代码附录	40
+1.大厅代码	40
+2.记忆力卡牌游戏代码	41
+2.1.Card类	41
+2.2 Cards_GameManager类	42
+3.2048游戏代码	45
+3.1  NewScore类	45
+3.2  BestHistoryScore类	45
+3.3  Num类	46
+3.4  NumControler类	49
+3.5  StartButton类	66
+4.愤怒的小鸟代码	69
+4.1  Bird	69
+4.2  BlackBird	73
+4.3  YellowBird	75
+4.4  GreenBird	75
+4.5  Pig	75
+4.6  Boom	77
+4.7  PausePanel	78
+4.8  MapSelect	79
+4.9  Loadlevel	81
+4.10  LoadLevelAsync	81
+4.11  GameManager	82
+4.12  Win	85
+
+
+
+
+
+
+
+
+
+基于unity的游戏盒子
+学生：汪珺洁（指导老师：徐宁）
+（淮南师范学院计算机学院）  
+
+摘 要：论述 了基 于 unity3d的手机游戏设计与 实现过程 ，包括 目前手机游戏的 国内外发展 现状 、手机游戏的开发 平台二个方面。重点阐述了用 unity3d开发手机游戏的设计与实现过程，尤其在关卡以及重力感应的实现上，最终开发出一款手机游戏 ，该款游戏具有良好的娱乐性及交互性。 
+关键词：手机游戏 游戏引擎 关卡设计 
+一．需求分析
+1.1 手机游戏的发展趋势
+ 随着手机硬件性能、智能化的不断提升 ，手机游戏也在快速的发展。游戏产业正处于发展的 黄金时期，已伴随着人们的生活，不仅成为 人们业余取乐的一种方式，而且成为了一种文化产业，拉动 国内外经济的增长。另外国家也积极扶持游戏产业 ，高校开设相关的专业来培养技术人才也是游戏产业快速发展的动力因素。
+	尽管大型网游，手游在游戏中占据很大地位，但是一些单机游戏，迷你的手机游戏的地位也是不容小觑。它凭借这迷你的身躯，简单欢快的节奏等等，完美的填充了人们的碎片时间，给人们带来轻松快乐的时光。例如：春节之前微信推出的跳一跳游戏也是风靡一时，各类酷跑游戏，消消乐游戏等等层出不穷。另外游戏是游戏行业的入门小白，这种简单的手机游戏也比较容易上手。
+
+1.2游戏开发平台
+ 目前开发手机游戏有三种主流的游戏引擎 ： Unity3D、cocos2d 和 UDK。
+ Unity 3D 是 由 Unity Technologies开发专业游戏引擎 ，用于开发三维立体 空间、人物事物被赋予真是生活各种属性的模拟现实 生活场景的游戏平台，其最大的特点是跨平台性比较强，适用于 Window、IOS、Android、MacOSX 等各 大主流平台。 Cocos2d主要是实现交互应用 ，它可以把游戏的 框架、程序、界面交互应用在一起，同时它易于集成 其他资源库，共享资源 ，方便灵活。
+ UDK是虚拟引擎开发工具包 ，主要用于游戏画面 渲染，增强场景的虚幻感，它提供了几乎所有 的虚幻插件 ，shade效果更增强手机这种移动平 台的画面感。
+ 本文主要应用的是 Unity 3D 平 台，因 为它是 快速开发手机游戏的平 台，能够快速实现我们的梦想 。 Unity 3D 在 快速 开发方 面是 非 常强 的 ，它 适用 于 C#， JavaScript等主流的脚本语言，兼容三维画面美 化所需要的美术资源文件格式，其 内嵌 了动画、粒子、 寻路等子系统使其可 以进行各种图形渲染。而且，它不仅仅只是一个工具，它还有强大的后台支持，Unity 公司开设了一个网络资源商店 (AssetStore)，可以利用它下载几乎我们所需的所有东西，例如 ：模型、 贴图、脚本程序 、插件、场景音效、交互界面等等。
+
+1.3.任务概述： 
+1.3.1 目标
+1. 游戏整体风格
+	卡通简约可爱，游戏界面友好，运行流畅。游戏的画面，情节比较丰富，作起来也是比较简单，容易上手的。
+2.游戏模式
+	第一款记忆力卡牌游戏，主要考验玩家的瞬间记忆能力。第二款游戏2048主要考验玩家的心算能力和排列组合的能力。第三款愤怒的小鸟主要考验玩家对角度和力度以及相关物理特性的把控以及对于不同的对象应用不同的技能。游戏有不同主题不同难度的关卡设计，增加了游戏的趣味性。
+3.游戏UI
+二维的游戏界面，主要采用糖果风格，界面友好简单，干净简洁。
+4.游戏角色
+	角色多样，风格统一，不同角色对应不同造型，技能。角色将适应游戏界面和模式的需要，并且可爱养眼。
+5.游戏音效
+	能够渲染气氛，使得游戏不显得匮乏无力。主要采用了两套音效系统，大厅单独使用了一套游戏系统，三款游戏使用了同一款游戏音效。在添加了音乐音效之后，使得游戏玩起来更加有节奏感。
+1.3.2用户特点
+本游简单易懂，操作容易且交互性好，对用户没有什么特别的要求。适合各个年龄阶段和文化水平的玩家。
+1.3.3运行环境
+Windows系列，游戏模拟器以及安卓系统的手机和Ios手机，具有很好的跨平台性。
+1.3.4 条件和限制
+	单机游戏
+二．设计与实现
+2.1    2048 游戏设计与实现
+2.1.1  2048游戏概要设计
+2048是属于益智类的小游戏，游戏的趣味性也比较大。其规则如下：
+在游戏设计中，我使用了一个4*4的方块棋盘，玩家可以选择“上，下，左，右”四个方向移动，然后棋盘上的数字方块均会像该方向滑动靠拢。
+其中：1. 相邻并且相同的数字方块会产生合并并产生一个新的方块，新产生的方块的数值是原先两个方块的数值之和
+2.每次滑动成功获知合并成功以后，都会在滑动方向起点行产生一个新的，数值为2的方块
+3.赢的条件：若干次滑动合并以后，棋盘上出现数值为2048的方块
+4.输的条件：棋盘方块已满，没有达到2048，且无法再合并
+
+ 
+游戏玩法示意图
+2.1.2  详细设计
+2048游戏中，主要涉及对象包括：1个4*4的游戏棋盘，若干带有2，4，8，16，32，64，128，256，1028，2048数值的游戏方块，一个2048的Image Logo,以及存放最高成绩和当前成绩的的Text对象，和一个newGame 的 
+主要涉及到的类：
+1.	带数值的图片，一下简称Num对象，对其挂在了Num.CS的脚本，主要记录了该对象相关属性和方法。
+2.	Score对象，主要记录当前游戏不断变化的分数，挂载了NewScore脚本
+3.	Best对象，主要记录历史记录中的最高成绩，挂载了BestHistoryScore脚本。
+4.	NewGame对象，点击则重新开始游戏，挂载了NewGame脚本
+5.	Back对象，点击返回游戏大厅
+6.	以及一个控制器的脚本NumControler，挂载在棋盘上
+详情截图如下
+ 
+图1  2048项目场景概览
+2.1.2.1  核心代码介绍
+（1） Num类
+所有的各种数值的Num,实际制作了一个Num的预制体Prefab,使用时利用代码实例化这个Prefab,并改变其数值和颜色。通过分析可以知道，Num需要的属性有：
+1.int NumIndex，  用来控制新产生的Num图片上面具体的数值
+2.int InitX,InitY，  4*4宫格里面的坐标从（0，0）--（3，3）
+3.Sprite[] ImageSouce，  存放所有图片资源的图片
+4.bool isDestory=false， 布尔值，记录是否要销毁Num图片，比如合并以后删除多余的图片
+5.float moveTime = 0.4f， Num移动所需要的时间
+Num自身需要具备的方法：
+1.	CreateNum()，创建Num类   
+  private void CreateNum()
+  {//ScaleTo:改变游戏对象的比例大小到提供的值。
+   iTween.ScaleTo(this.gameObject,new Vector3(1, 1, 1), 0.2f);}
+     这里用到了一个插件：iTween,这个插件提供了很大方便，简单的介绍一下吧。iTween这个类库，它主要的功能就是处理模型从起始点到结束点之间运动的轨迹。（移动，旋转，音频，路径，摄像机等） 它是一个开源的项目并且完全免费，它们的官网在这里 http://itween.pixelplacement.com/index.php 打开网之后点击右上角Get iTween图标即可，或者在AssetStores商店中直接下载。我把iTween的源码仔细读了一遍，我感觉与其说它是处理动画的类，不如说它是处理数学的类。 这里我只用到了ScaleTo()一个方法，他还有很多方法哦，可以直接实现功能。
+2.	初始化位置， InitPos（），核心代码：
+       this.transform.localPosition = new Vector3(Mark.localPosition.x +143 * InitX, Mark.localPosition.y - 123 * InitY, Mark.localPosition.z);
+这里的143和123是根据棋盘中横纵方格之间的间距计算出来的，Mark.localPosition是棋盘中（0, 0）坐标的位置，棋盘中其他的位置都是以其相对坐标
+3.	移动位置-UpdatePos(int x,int y)
+ public void UpdatePos(int x,int y)
+    {//通过itween进行移动，但是由于itween只能通过position来移动，会出现适配问题，故尝试编写运动代码
+     // Hashtable args  是以键值对儿的形式保存iTween所用到的参数
+      Hashtable args = new Hashtable();
+      args.Add("time", moveTime);
+      args.Add("islocal", true);
+      //表示示移动的位置。
+      args.Add("position", new Vector3(Mark.localPosition.x + 143 * x, Mark.localPosition.y - 123 * y, Mark.localPosition.z));
+      //处理移动过程中的事件。例如：开始发生移动：onstart  移动结束：oncomplete  移动中:onupdate
+      //移动结束时调用 SetUpXAndY方法
+      args.Add("oncomplete", "SetUpXAndY");
+
+        //以上只是准备工作，下面最终让该对象开始移动
+        iTween.MoveTo(this.gameObject, args);
+        InitX = x; InitY = y;
+    }
+1.移动完成后设置属性/删除，例如合并以后删除多余的Num，-SetUpXAndY（）
+2.根据NumIndex改变NumImage， UpdateImage（）
+ 即：NumImage.sprite = ImageSouce[CorrespondImageAndIndex(NumIndex)];
+3.将NumIndex与ImageSouce一一对应，即：
+private int CorrespondImageAndIndex(int NumIndex ){
+switch (NumIndex) { 
+case 2:return 0;  case 4:return 1;  case 8:return 2;  。。。。。。
+default:return 0; } }
+
+（2） 控制器类的分析
+
+             
+图2 核心玩法基本流程图
+<1>  准备工作，考虑到用户在屏幕上滑动，会有不同的方向，游戏控制器本身需要区分不同的游戏状态，因此我用两个枚举记录这些值：
+//用户手指滑动的方向
+    public enum TouchDir
+    {Top,Bottom,Right,Left,None  //表示可以生成新的prefab}
+//游戏的状态
+    public enum GameState
+    {Loading,Playing,End }
+因为Num数值本身分为两种，一种用来存放4*4的宫格里面的每个Num的数值，这种Int型数值需要在代码中被用到，还有一种以呈现给用户看到的图片型数字，因此定义两个二维数组来存放数据，并且两个数组是相互对应的。
+ //NumIndexArray  Num图片索引数组   用来存放数值的
+    private int[][] NumIndexArray = new int[4][]{};默认值：0
+//NumAssemblyArray  Num图片集合数组  用来存放GameObject Num
+  private Num[][] NumAssemblyArray = new Num[4][]{}; 默认值：null
+好吧，准备工作完毕，现在开始依据上图核心玩法的基本流程图中的步骤一步步写方法吧。
+1.获取用户输入主要利用Input.GetMouseButtonUp(0)函得到
+手势识别的原理是，逻辑上，以原点为中心把滑动空间分成4部分，上，下，左，右，每个部分90度，判断用户手指滑动的方向。
+判断鼠标滑动方向- GetTouchDir
+    private TouchDir GetTouchDir(){
+ 	if (Input.GetMouseButtonUp(0)){
+            Vector3 TouchOffset = Input.mousePosition - mouseDownPosition;
+            if (Mathf.Abs(TouchOffset.x) >= Mathf.Abs(TouchOffset.y) && Mathf.Abs(TouchOffset.x) > 80)
+            {
+                if (TouchOffset.x > 0)
+                { return TouchDir.Right;
+                }
+                else if (TouchOffset.x < 0)
+                { return TouchDir.Left;} }
+            if (Mathf.Abs(TouchOffset.x) < Mathf.Abs(TouchOffset.y) && Mathf.Abs(TouchOffset.y) > 80)
+            {
+                if (TouchOffset.y > 0)
+                {  return TouchDir.Top;
+                }
+                else if (TouchOffset.y < 0)
+                { return TouchDir.Bottom; }}
+     return TouchDir.None }
+这里可以看到刚好用到了我之前定义的手势方向的枚举。处理用户输入，识别手势上下左右方向的滑动手势识别的作用是确定用户的操作意图。
+2048的手势规则是：
+1.手指快速向左滑动一段距离，认为是向左滑动的操作。类推向右，上，下。
+2.手指按下后滑动速度超过某个时间长度，操作无效。
+3.滑动操作成功后，不松手再滑动，操作无效。
+4.每次有效滑动操作需要经历：1手指按下2.朝某个方向，在指定时间内，滑动指定长度距离。
+有了上面我们获取到了用户的手势方向，然后对棋盘中现存的所有Num进行移动吧，移动之前我们需要注意，因为有四个方向所以我们需要分别处理，为了使代码简便明了，那就使用Switch结构吧，结构如下：
+ private void ToMove(TouchDir touchDir)
+    { switch (touchDir)
+        { case TouchDir.Top:
+实现代码部分
+case TouchDir.Bottom:
+case TouchDir.Left:
+ case TouchDir.Right:}}
+3.处理用户操作，合并移动方块
+挑出第一段实现代码出来分析一下吧，其他的就不赘述啦，原理相同。
+在向上移动的过程中，方块如合合并，这利用的是方块的结合律，合并以后，删除原来的两个方块，并在合并的地方产生一个原来方块之和的新方块，在滑动方向起点的位置产生一盒数值为2的新方块。 例外还涉及到方块向滑动的方向结合时的优先级问题，例如：
+方块水平序列（ 2 2 2 ）向左滑动的结合结果是：（4 2）
+方块水平序列（ 2 2 2 ）向右滑动的结合结果是：（2 4）
+方块水平序列 （2 2 2 2） 向左、向右滑动的结合结果是：（4 4）
+每次滑动方块，方块之间只能结合一次,若要使上述情况结合成8，需要滑动2次。
+以上的分析里面，我们一直涉及到一个新的问题，生成新的Num,那么这里又涉及到几个新的问题，在什么位置生成新的，即如合选择一个新的位置，怎么区分是游戏有没有结束，如果游戏结束了，则不需要生成了新的了，好吧，下面进入流程图的第五项，第四项是计分和更新UI显示，这个的话，比较简单，因为Score和BestScore对象都绑定了相应脚本，但是在NumControler脚本中，相当于是整个游戏的入口，并起到了管理其他脚本，控制其他对象的作用。至于游戏运行中不断的更新的计分，都是伴随在其他方法中的。分值利用例如：PlayerPrefs.GetInt("HistoryScore", 0);的函数存储在文件里的GetInt()是一种以键值对的方式存储。对于小游戏中不需要存储大量数据是很适用的。
+4.随机空白处生成数字为2的方块
+在生成方块之前，需要考虑的问题有：确定那个随机生成的位置，实例化Num类的相关属性和方法，当创建Num时，当前游戏是否处于游戏中的状态即棋盘上是否还有空位置，但是棋盘上有没有空位置并不是唯一判断的标准，当棋盘上所有位置已经满的时候，还要考虑棋盘中每个Num是否和其上下左右的相邻是否数字相同，当有相邻的相同数字朝上下左右方向滑动时，是可以合并的，此时合并删除，又会产生新的空位置。这一点在我刚写代码逻辑时是没有考虑的，所以测试运行时才发现这个Bug,从而重新修改了我的代码。
+好吧，下面先展示我的根据不同的情况，选择一个空的位置的方法：SelectEmptyPos(TouchDir touchDir)，这里也是要给它传一个具体的方向的参数，这个参数就是我之前准备工作中定义的那个枚举。结构如下，
+ private Vector2 SelectEmptyPos(TouchDir touchDir)
+    {
+        //若输出9，9；则已经没有空位，游戏结束  这里只是一个标志位，超过（3，3)以外的值都可以，后面CreateNum也是以这个9作为判断
+        int newX = 9, newY = 9;
+ if (touchDir == TouchDir.Top){}
+ else if (touchDir == TouchDir.Bottom){}
+ else if (touchDir == TouchDir.Right){}
+else if (touchDir == TouchDir.Left){}
+else if (touchDir == TouchDir.None){}
+//返回值类型：Vector2(newX, newY)是一个二维的坐标
+ return new Vector2(newX, newY);
+}
+因为上下左右的原理相同，我只挑一个出来解释一下吧，详细的可以看我后面的代码附录部分，另外else if (touchDir == TouchDir.None)表示可以生成新的prefab，这段的代码我也挑出来看一下吧。
+if (touchDir == TouchDir.Top)
+        {
+            #region moveToTop
+//遍历查看空位置的个数
+            int emptyNumCount = 0;
+            int y = 3;
+            for (int x = 0; x < 4; x++)
+            { if (NumIndexArray[x][y] == 0)
+                {
+                    emptyNumCount++;  }  }
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+                int count = 0;
+                for (int x = 0; x < 4; x++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    { count++;
+                        if (count == randomIndex)
+                        {
+                            //因为一开始newX和NewY被赋值9，而四宫格里没有（9，9)这个坐标，所以创建新的Num Prefab是不成功的
+                            //当棋盘里还有空位，这段代码就会被执行，从而赋新的坐标位置的值
+                            newX = x;
+                            newY = y;
+                        }
+好吧，以上就是当手指滑动方向向上时，我的代码部分的处理逻辑，下面是，当可以生成一个新的Prefab时的位置选择的代码逻辑。
+else if (touchDir == TouchDir.None)
+        { #region AddOne    int emptyNumCount = 0;
+            for (int x = 0; x < 4; x++)
+            { for (int y = 0; y < 4; y++)
+                {if (NumIndexArray[x][y] == 0)
+                    {emptyNumCount++; } }}
+
+            //Debug.LogError("开局创建第一个Num,查看emptyNumCount：  " + emptyNumCount);
+            if (emptyNumCount != 0)
+            {  int randomIndex = Random.Range(1, emptyNumCount + 1);
+               // Debug.LogError("产生的随机数为：  " + randomIndex);
+                int Count = 0;
+                for (int x = 0; x < 4; x++)
+                {  for (int y = 0; y < 4; y++)
+                    { if (NumIndexArray[x][y] == 0)
+                        {Count++; if (Count == randomIndex)
+                            { newX = x; newY = y;
+ //   Debug.LogError("第一个Num的位置(newX,newY)：  " + newX + newY);}
+
+通过以上代码可以传递一个位置给CreateNum，以下是生成Num,但是在CreateNum方法中，我使用了一个携程，当然这里只是它的一个特别简单的使用，在CreateNum时，可以暂停0.2秒后生成Prefab,这样比较有种动画的的感觉，具体代码如下：
+ #region 等待并且在合并时生成新的Num-WaitAndCreateNum(int x,int y,int index,float WaitTime)
+    //这里的携程在根据不同的情况进行移动的时候被调用
+    IEnumerator WaitAndCreateNum(int x, int y, int index, float WaitTime)
+    {
+        WaitTime -= 0.2f;
+        yield return new WaitForSeconds(WaitTime);
+        CreateNum(x, y, index);
+    }
+    #endregion
+解释一下：yield return 语句只表示“暂时地”退出方法——事实上，你可把它看成暂停。 对于携程的话，平时用的比较多，他还有很多其他的方法，下面是我在使用之前查找的关于携程的原理的一些介绍：
+Unity中的协程，虽然在功能上很想线程，但是并不是线程哦。Unity的协程其实也是运行在主线程（MainThread）中的，和MonoBehaviour 的 Update函数一样，每一帧处理一次，也并不和主线程并行。所以，如果你想临时中断协程的话，只需要MonoBehaviour enabled = false 或者 gameObject.active = false 就可以停止协程的执行。但是协同程序与线程差不多，也就是一条执行序列，拥有自己独立的栈，局部变量和指令指针，同时又与其它协同程序共享全局变量和其它大部分东西。线程与协同程序的主要区别在于，一个具有多线程的程序可以同时运行几个线程，而协同程序却需要彼此协作地运行。就是说，一个具有多个协同程序的程序在任何时刻只能运行一 个协同程序，并且正在运行的协同程序只会在其显示地挂起时，它的执行才会暂停。
+好吧，以上的准备工作做了很多了，现在来正式创建Num吧。这个方法的核心算法，我在之前已经阐述过了，这里就不做赘述了，代码里面也有相应的解释。 private void CreateNum(TouchDir touchDir){  }
+
+到现在，2048游戏的所有的核心逻辑已经解释完毕啦，最后附上一个代码总概览图吧。
+ 
+图3 2048_NumControler 代码结构概览图
+
+
+
+
+2.2 愤怒的小鸟 游戏设计与实现
+2.2.1 愤怒的小鸟游戏 概要设计
+1.1 游戏说明：
+首先关于愤怒的小鸟游戏的玩法比较简单，把弹弓上的小鸟弹射出去，最后目标——砸到绿色的猪头，将猪头全部砸到就能过关；这里需要注意的是：每关所使用的鸟儿越少，评价将会越高，获得的分数越讲越多；并且越往后的关卡可使用的小鸟越来越少、小，并且保护猪头的障碍物也将越来越复杂。
+每个小鸟的特技：
+1.红色小鸟，这种愤怒的小鸟很勇敢，但最普通，只需你用弹弓发射出去打中目标就可以!这种小鸟适合攻击猪堡中的木材结构!
+2.黄色的三角形鸟，它也拥有非同凡响的身手!当它被发射到半空时，轻触屏幕，此鸟会进行二次加速，高速的冲向猪堡，威力倍增!!当然，，加速的位置同样非常关键哦，否则它很容易飞越猪堡哦!!这种愤怒的小鸟也是攻打木质结构比较有效!!
+ 3.黑色的炸弹鸟，听名字就知道，它们可以爆炸!在需要的时候轻触屏幕，小鸟就像一颗地雷一样爆炸了!威力巨大!所以你得在该爆的时候让它爆，不该爆的时候可别乱爆!这种愤怒的小鸟什么都能炸，但好钢要用在刀刃上，所以最好用来炸混凝土结构！
+1.2本游戏共有三个unity场景：01-Loading，02-Level，03-game，场景截图如下：
+ 
+图1 01-Loading场景
+     
+图2 02-Level场景_1
+   
+图3 02-Level场景_1
+   
+图4 03-game场景_1
+   
+图5 03-game场景_2
+
+
+其中：
+01-Loading界面主要是一个刚进入游戏的加载界面，2秒钟之后会调到02-Level界面。 02—level界面主要包括四个不同主题的关卡，第一个主题开始游戏会自动解锁，解锁之后会进入该主题的关卡详情界面，共28小关卡，每个关卡根据玩家所玩的左后会给出1-3颗星，当主题场景1的累计星星个数达到10颗以上可以解锁第二场景关卡。当第二场景的小关卡数量达到20颗星星可以解锁第三小关卡，以此类推 03—Game场景，是最后选择玩关卡之后的玩游戏场景
+
+2.2.2 详细设计
+在2048游戏里面，基本上都是我自己写的算法实现各种功能，但是愤怒的小鸟游戏的难度远远大于2048，并且愤怒的小鸟里面很多的物理属性都是Unity自带的组建，这样真的给我们的编程带来了极大的便利，话不多说，先从Level1关卡开始，备注：所有的我们看得见的物体即UI显示，都是用2D图片拼成的界面，被我们称为对象，在利用相关脚本组建控制这些图片实现各种功能
+2.2.2.1制作愤怒的小鸟之02——Game场景
+游戏逻辑：
+1.	小鸟的拖拽（最大距离的限制）
+2.	小鸟的飞出
+3.	小鸟与猪，木头碰撞（死亡/受伤）
+4.	皮筋的绘制
+5.	一只小鸟到多只小鸟的转化
+6.	制作各种五毛钱特效
+7.	镜头的跟随
+8.	游戏结束，胜利的判定
+9.	添加音效
+
+在我的Unity工程中，各个对象的命名如下所示：
+ 
+图6 Level1关卡中个对象的命名
+1. env（环境）中相关对象介绍
+包括：淡蓝色的天空的背景，深蓝色岩石切面，绿色的草，这些都是UI切图，通过Sprite Renderer 组建的Sprite属性，设置不同的UI裁剪图片。
+2．制作小红鸟和弹弓
+需要添加的Unity自带组建：例如用于控制小鸟被拖拽时的距离。
+游戏中，用户似乎是在拽动弹弓上的小鸟，弹弓上的皮筋也被拖长了。实际的实现法是利用小鸟的Spring Joint 2D实现拖动效果，至于弹弓上的皮筋是在左右树枝上分别分别添加Line Renderer 组建，组建的两端分别是小鸟和左/右树枝。另外小鸟和树枝都要添加刚体组建——Rigidbody 2D,实现物理效果。
+下面对这几个关键组件做出一些介绍：
+Spring Joint 2D：弹簧关节组连接两个刚体，让它们像被弹簧连接着一样运动。弹簧关节允许一个刚体物件被拖向一个指定的"目标"点。这个点即可以是另一个刚体物件，也可以是世界。当物件远离目标点时，弹簧关节对其施加力使其被拉回初始目标点。类似橡皮筋与弹弓的效果。这个"目标"点的位置在创建弹簧关节或进入PLAY模式时。
+Rigidbody 2D：添加Rigidbody2D组件到一个精灵上置于物理引擎的控制下。就其本身而言，这意味着精灵会受到重力的影响并可以从脚本使用力控制。通过添加合适的碰撞器组件，该精灵也会响应与其他精灵碰撞。这种行为完全来自Unity的物理系统；非常少的代码得到令人印象深刻和真实的物理行为，并允许游戏中未明确编码的“突发”的运动。
+小红鸟对象需要添加的脚本：Bird脚本和Test My Trail脚本，下面对着两个脚本进行介绍吧。
+Test My Trail脚本是在网上看到其他博客博主制作刀塔小游戏时，人物挥动大刀，刀挥动起来，会展示运动的轨迹，看起来比较炫酷的样子，我就把那个轨迹的脚本学习了一下，应用到我的小鸟身上，当小鸟飞过天空时，身后会拖个飞行轨迹留下的的小尾巴。
+Bird脚本，主要记录鸟具有哪些属性，以及具备哪些方法。
+因为要进行检测，小鸟是否被拖拽了，如果被拖拽了，就要进行划线操作，播放被选中的音乐，要对小鸟开启动力学，不受物理控制，(但是飞出的角度和力度都是可以控制的)否则小鸟飞出时的感觉有种横冲直撞的感觉，还要稍微延迟，如果计算的时间太短了，小鸟飞不出去。当松开拖拽小鸟时，就要取消所画的弹弓线
+private void OnMouseDown()//鼠标按下
+    {if (canMove) {
+            //当鼠标按下一下，播放小鸟被选中的音乐
+            AudioPlay(select);
+            //检测鼠标是否被按下
+            isClick = true;
+            //开启动力学，不受物理控制，(但是飞出的角度和力度都是可以控制的)否则小鸟飞出时的感觉有种横冲直撞的感觉
+            //(但是要稍微延迟一下，如果计算的时间太短了，小鸟飞不出去)
+            rg.isKinematic = true; }}
+    private void OnMouseUp() //鼠标抬起
+    {if (canMove)
+        {isClick = false;rg.isKinematic = false;
+            //延时的时间不能太长，否则小鸟就会被弹回来
+            Invoke("Fly", 0.1f);
+            //禁用划线组件
+            right.enabled = false;
+            left.enabled = false;
+            canMove = false;
+        }
+小鸟本身还要有会飞行的能力：
+ void Fly()
+    {isReleased = true;
+        isFly = true;
+        //当小鸟飞行时，播放小鸟飞行的音乐
+        AudioPlay(fly);
+        myTrail.StartTrails();
+        //当鼠标抬起时，小鸟就要飞出
+        sp.enabled = false;
+        Invoke("Next", 5); }
+
+需要处理下一只小鸟的飞出（上一只小鸟飞出后就要消失）
+ protected virtual void Next()
+    { GameManager._instance.birds.Remove(this);
+       Destroy(gameObject);
+        Instantiate(boom, transform.position, Quaternion.identity);
+        GameManager._instance.NextBird();}
+另外：由于有多种小鸟，小红鸟是最普通的一种，没有特技，但是例如
+黄色三角形鸟拥有特技，在飞出以后点击屏幕，此鸟会进行二次加速，高速的冲向猪堡，威力倍增!
+ 	黑色的炸弹鸟，听名字就知道，它们可以爆炸!在需要的时候轻触屏幕，小鸟就像一颗地雷一样爆炸了!威力巨大!
+嘉年华绿色长嘴小鸟发射出去之后，点击屏幕小鸟会转弯的哦。Bird脚本作为其他小鸟的父类，当然要流出是否含有特技的的方法接口。
+ public virtual void ShowSkill() {isFly = false;}
+当小鸟碰撞到右边的木块或者绿猪，小鸟会死亡或者受伤，当死亡的时候，小鸟会产生爆炸的蘑菇云动画，然后小鸟被销毁，当小鸟受伤时，其UI图片也会被换成受伤鸟的图片，并且也会有惨叫声。而这些图片资源，都是我事先准备好的，包括音频资源
+最后还要处理当小鸟飞行的时候，让摄像机跟随小鸟平滑移动，这样小鸟飞出去之后，始终让小鸟保持为屏幕中的主角的感觉。
+好吧，以上就是基础小红鸟的脚本Bird类中主要核心逻辑，在看一下其他带特技的小鸟，他们的脚本又是怎么扩展新的方法的吧。
+小绿鸟有回旋特技，主要的实现原理是，当点击屏幕的是否，改变速度的方向，很简单吧
+public class GreenBird : Bird {     public override void ShowSkill()
+    {  base.ShowSkill();
+        Vector3 speed = rg.velocity;
+        speed.x *= -1;
+        rg.velocity = speed;}}
+黄色三角形鸟拥有二次加速的特技，所以当点击屏幕时，改变飞行速度呗， rg.velocity *= 2;
+黑色爆照鸟，点击屏幕会爆炸，并且会把其爆炸范围之内的的物体（因为只炸猪或者木块，石头等等，所以在unity监视器中，把这些对象都加一个“Enemy”的标签，方便统一处理）炸死。
+因为爆炸的话会有一个爆炸区域，分为Enemy进入爆炸区和离开爆炸区，均有相关操作，这里利用了Unity自带的方法，把这下相关需要处理的操作写进这两个方法中，即：OnTriggerEnter2D(Collider2D collision)和OnTriggerExit2D(Collider2D collision)，另外产生爆炸特效以后，把这个小鸟的组件禁用掉，并清理后续特效。这个对象的脚本处理起来相对去前两者稍微麻烦点。 详细的代码请参看BlackBird脚本。
+好了，以上所有的小鸟和弹弓的问题已经处理好了，接下来看看小鸟飞出去要打击的对象Enemy,即猪和他的堡垒们。他们也需要添加两个特别的Unity自带组建Rigid body 2D实现相关物理特性的组建，这个组建在小鸟身上已经介绍过了。还有一个是Circle Colider 2D组建，这个组建的话，小鸟身上也是有的，之所以他们之间可以检测到碰撞，就是依据这个组件的。Enemy们身上还有一个脚本，记录其自身的相关属性和应该具备的一些方法，这个C#脚本叫Pig,之前在设计的时候，本身是为猪写的，但是发现猪和其他他的堡垒属性方法差不多，只是属性值不一样，考虑到代码的简洁性，所以公用同一个脚本，至于一些很少数的不同之处，代码了加处一些判断处理就好了。
+Pig脚本中，猪应该具有的相关属性：
+//用来控制小鸟撞击猪时的速度属于死亡还是受伤的参考值
+public float maxSpeed = 10;
+    public float minSpeed = 5;
+private SpriteRenderer render;
+//猪受伤时替换的图片
+public Sprite hurt;
+//爆炸特效
+public GameObject boom;
+//猪被撞死以后的分数
+    public GameObject score;
+
+    //设置猪的两个音乐受伤和死亡以及小鸟碰撞的音乐
+    public AudioClip hurtClip;
+    public AudioClip dead;
+public AudioClip birdCollision;
+//判定是猪还是猪的堡垒
+ public bool isPig = false;
+
+当猪和小鸟碰撞以后的相关判断如下：
+//碰撞检测  要求两个游戏物体都需要rigidBody 2D和碰撞盒
+    private void OnCollisionEnter2D(Collision2D collision)
+{//print(collision.relativeVelocity.magnitude);
+ //如果小鸟碰撞到其他东西则播放小鸟受伤的声音
+        if (collision.gameObject.tag == "Player") {
+            AudioPlay(birdCollision);
+            collision.transform.GetComponent<Bird>().Hurt();}
+        //如果两者的相对速度> 最大速度，小猪直接死亡（消失了）
+        if (collision.relativeVelocity.magnitude > maxSpeed)//直接死亡
+        {  //处理猪的死亡后事，猪消失，产生爆炸特效
+ Dead();  }
+ //如果两者的相对速度介于最大和最小速度之间，小猪受伤  （小猪的图片更换成受伤的图片）
+        else if (collision.relativeVelocity.magnitude > minSpeed && collision.relativeVelocity.magnitude < maxSpeed) {
+            render.sprite = hurt;
+            AudioPlay(hurtClip);}}
+
+到目前为止，已经处理好鸟和猪的所有交互至于如何控制猪和鸟的交互，是放在了gameManager 游戏管理器的脚本中，这个脚本对所有游戏中的对象进行统一的管理，这个脚本呢我会在之后再介绍。因为Level1中还有一些对象没有介绍：
+面板1：PausePanel面板，即当点击屏幕中“暂停”按钮的时候，会弹出一个半透明的遮罩，遮罩上会有一个面板，面板上有三个黄色按钮，继续，重新开始以及回到愤怒的小鸟的Loading界面，重新开始。
+Lose面板， 有一只得瑟的猪头，这个是静态的。还有两个黄色按钮，继续和返回主菜单按钮
+Win面板：有一至三颗星星，至于具体展示星星的个数，是根据玩家闯关后的分数决定的，星星会依次展示，这个是利用了之前介绍过的携程的方法实现的。星星在展示的同时会有烟花的特效感觉，这个是看了CSDN上一个博主的烟花教程，后来整理了一下，用在了星星的身上，当星星播放时同时播放烟花的动画特效，也会有种高级感。另外两个按钮：重新开始和返回主菜单这两个都是Button,跟上面的按钮一样，添加了按钮的点击事件
+以上三个面板都是事先做好的，其实每个组建都有SetActivity属性，当设置这个属性值为False的时候，就可以影藏这个对象。所以以上三个面板，都是对每个面板的父物体设置了影藏，这样他的所有子物体也会被影藏。这样在代码里控制，当达到相应的条件时，使得这个物体对象显示。
+到这里为止，Level1关卡中的所有核心对象都已经介绍完毕。现在介绍这些所有的对象里面的控制类GameManager脚本。
+GameManager脚本中，首先开始准备工作，画的相关要被控制的对象包括：该关卡中的3只鸟对象和两只猪对象，放在 public List<Bird> birds; public List<Pig> pig;，list的大小根据后面关卡物体数量的不同，可以动态改变。
+private Vector3 originPos; //初始化的位置  第一只弹弓上的小鸟的的位置
+    //win和lose 两个面板
+    public GameObject win;
+    public GameObject lose;
+    //储存一个关卡结束以后，界面所展示的星星
+    public GameObject[] stars;
+    //用于存储各个关卡的星星的数量
+    private int starsNum = 0;
+    //目前所打算设计的关卡总数量
+    private int totalNum = 9;
+
+初始化小鸟，因为每一关中的小鸟的个数和类型可能不同。处理多只小鸟时，当第一只小鸟（当前可用），否则让SpringJoint2D和brids脚本不可用。
+判定游戏逻辑：
+public  void NextBird()
+    {if(pig.Count > 0)
+        { if (birds.Count > 0){
+                //下一只飞吧Initialized(); }
+           else{
+                //输了lose.SetActive(true);}}
+        else{//赢了 win.SetActive(true);
+        }}
+另外，每一关完成之后的星星数量(int),利用unity自带的PlayerPrefs.SetInt("level+num",星星数)，并且涉及到更新，涉及到下一关是否可以开启，以及level界面星星个数的显示，至于星星数量的存储，还是用到之前用到过的，PlayerPrefs.SetInt("totalNum",sum);读取这个文件中星星的数量，PlayerPrefs.GetInt("totalNum")。
+
+以上只是制作了Level1,还记得吧，我们共有三个主题，每个主题里面有28小关，都要这样重复的制作么，那么03-Game场景岂不是太大了，很浪费资源呢？当然不是啦，Unity中，有个叫Prefab的东西，看一下官方文档：
+预设体的概念: 组件的集合体 , 预制物体可以实例化成游戏对象.
+创建预设体的作用: 可以重复的创建具有相同结构的游戏对象。
+通过添加组件并将它们的属性设置为适当的值，在场景中构建GameObject是很方便的。然而，这可能会产生问题，当你有像NPC，道具或场景多次重复使用的景物。简单地复制对象肯定会产生重复的内容，但它们都是独立可编辑的。通常，您希望特定对象的所有实例具有相同的属性，因此，当您在场景中编辑一个对象时，您不希望对所有副本重复进行相同的编辑。
+幸运的是，Unity有一个Prefab资产类型，允许你存储一个带有组件和属性的GameObject对象。预制件用作模板，您可以从中创建场景中的新对象实例。对预制资产所做的任何编辑都会立即反映在由其生成的所有实例中，但您也可以单独为每个实例覆盖组件和设置。
+注意：当您将资产文件（例如Mesh）拖到场景中时，它将创建一个新的对象实例，并且所有这些实例将在原资产更改时更改。但是，虽然其行为表面上类似，但该资产不是预制件，因此您将无法添加组件或使用下面介绍的其他预制功能。
+
+具体的使用方法，就是把刚刚制作的Level1直接拖拽到Assert资源目录下的任意文件夹，此时之前的Level1变成了蓝色字体，表示已经变成了Prefab了，在我的项目工程中，我把所有的Level放在了一个新建的叫Resource的文件夹，便于后面的关卡管理和加载。
+在我的项目里面，由于时间有限，所以我在每个主题场景里的28个小关卡，我只制作了3关，所以总的一共制作了9关 。因为之前已经有了Level1关卡，我们制作后面的关卡时，只要改变相应的图片属性值和位置等，让每一小关卡看起来不一样，难以程度不一样，小鸟不一样，（因为小鸟带的特技比一样啦），根据以上组合出不同的关卡即可。好，我们终于制作完成游戏场景啦。
+
+2.2.2.2制作愤怒的小鸟之02——Level场景
+这个场景相比较Game场景来说，相对容易一点，主要以下分为两部分：
+   
+图7 Level界面层次结构图  图8  Level中Map面板    图9  Level中Panel1面板
+
+由Level界面层次结构图可以看出Map和Panel1,Panel2,Panel3在同一个画布下，且Map,Panel1,Panel2,Panel3,不是同时显示的，还是用到了之前的方法设置这些对象的SetActivity属性为True或者False。另外，Map_map1,就是第一个主题场景，当它被解锁以后，展示的所有小关卡就是Panel1。同理主题场景2，Map_map2对应关卡Panel2,主题场景3Map_map3对应Panel3。在这里，我的主题场景4还没有开发，这里只是放了一张主题照片而已。
+在主题场景Map中，Map1，Map2和Map3之间也是有关联关系的，当游戏运行时候，主题Map1场景会自动解锁，当玩家在主题Map1中的小关卡获得的星星总数大于等于10颗以上，游戏会自动解锁主题Map2场景。同理，当玩家在前两个主题里所有小关卡的星星总数大于等于20颗以上，游戏会自动解锁第三关卡。在每个游戏主题Map中，玩家在关卡中获得所有的星星的总数也会同步更新到Map场景的界面上。
+在每个主题场景的子关卡，即Panel中，共有28个带解锁的灰色关卡 ，游戏运行的时候，第一个关卡会自动解锁，当第一关获得的星星的数量大于等于1颗时，最多三颗星，游戏会自动解锁下一个关卡，以此类推。
+好吧，以上就是关卡实现的大致思路，接下来，我们看一下这些关卡实现的算法逻辑吧。
+首先，我们还是先看场景Map挂载的脚本，MapSelect.CS文件，准备工作：
+//用于存储每个关卡可以解锁星星的数量
+    public int starsNum = 0;
+    //用于判断该关卡是否可以解锁
+    private bool isSelect = false;
+    //每个关卡下面的的两个图片
+    public GameObject locks;
+    public GameObject stars;
+    // 点击每个map关卡，进入关卡详情（小关卡的选择）小关卡放在关卡Panel中
+    public GameObject panel;
+    public GameObject map;
+    //用来显示每个关卡  获得的星星 / 总共需要的星星
+    public Text starsText;
+    //每个小关卡名目前共制作了三个map,9关
+    public int startNum = 1;
+public int endNum = 3;
+
+每个Map上都有Click事件，当玩家点击的时候，加载子关卡，原理就是是否影藏Map面板：
+public void Selected()
+    {if (isSelect) {
+ panel.SetActive(true);
+       map.SetActive(false); } }
+
+    public void panelSelect() {
+        panel.SetActive(false); }
+每个脚本都有开始的入口，在Unity中，当一个类继承MonoBehaviour（MonoBehaviour是每个Unity脚本派生的基类。当你使用C＃时，你必须明确地从MonoBehaviour派生出来。当您使用UnityScript（一种JavaScript类型）时，您不必从MonoBehaviour明确派生。）的时候，会有很多自带的方法，它们会被自动执行，但是执行的时间，次数什么的都不相同，这里就简单的介绍几个我们平时最长用到的：Start(),Update()
+（1）Start()方法：
+在第一次调用任何Update方法之前启用脚本时，将在帧上调用Start。
+像唤醒功能一样，在脚本的生命周期中，Start只会被调用一次。但是，无论脚本是否启用，在脚本对象初始化时调用Awake。如果在初始化时未启用脚本，则可能不会在醒来的同一帧上调用开始唤醒。
+	在调用任何对象的启动函数之前，唤醒函数将在场景中的所有对象上调用。这个事实在对象A的初始化代码需要依赖于对象B已经被初始化的情况下是有用的; B的初始化应该在Awake中完成，而A应该在Start中完成。
+	在游戏过程中实例化对象的地方，在场景对象的开始功能已经完成之后，它们的唤醒功能自然会被调用。
+（2）Update()方法：
+如果MonoBehaviour已启用，则每帧调用更新。
+更新是实现任何类型的游戏行为最常用的功能。为了获得自上次调用更新以来的经过时间，请使用Time.deltaTime。只有在行为已启用时才会调用此函数。重写此函数以提供组件的功能。
+以上描述来自Unity官方文档的翻译。
+所以主题场景Map的结构逻辑放在Start()方法中，
+ private void Start()
+    {//PlayerPrefs 是unity自带的存储数据的方法，是用键值对来存储，一个键对应一个值，利用键来找值
+        if (PlayerPrefs.GetInt("totalNum", 0) >= starsNum) {
+            isSelect = true; }
+
+        if (isSelect) {
+            locks.SetActive(false);
+            stars.SetActive(true);
+
+            //TODo:text显示
+            int counts = 0; 
+            for (int i = startNum; i <= endNum; i++) {
+                counts += PlayerPrefs.GetInt("level"+i.ToString(),0);
+            }
+            starsText.text = counts.ToString() + "/60";}}
+
+好吧，以上就是主题场景的算法逻辑了，接下来看一下Level的算法逻辑吧Level中，就是每个小Level上被挂载了LevelSelect.CS 文件。先看准备工作：
+ //用于判断是否解锁子关卡
+    public bool isSelect = false;
+    public Sprite levelBG;
+    private Image image;
+
+//装星星的数组
+public GameObject[] stars;
+
+每个Level也是拥有Click点击事件，点击跳转到Game场景。
+//注册鼠标点击事件public void Selected()
+    { if (isSelect){////存储当前究竟是在那一关
+            PlayerPrefs.SetString("nowLevel", "level" + gameObject.name);
+            //场景跳转,由01-level 跳转到02-Game
+            SceneManager.LoadScene(3);}}
+
+最后 看一下LevelSelect的Start()方法：
+private void Start()
+    { if (transform.parent.GetChild(0).name == gameObject.name){isSelect = true;}
+      else{// 判断当前关卡是否可以选择
+//获得前一个关卡的名称，并把字符串转为数值
+      int beforeNum = int.Parse(gameObject.name) - 1;
+       //假如上一个关卡获得的星星数量大于1颗，解锁下一个关卡
+        if (PlayerPrefs.GetInt("level" + beforeNum.ToString()) > 0){isSelect = true;}}if (isSelect){image.overrideSprite = levelBG;
+   transform.Find("num").gameObject.SetActive(true);
+    //获取当前关卡对应的名字，然后获取对应的星星的个数
+     int count = PlayerPrefs.GetInt("level" + gameObject.name);
+//获取现在关卡对应的名字，然后获得对应的星星个数
+     if (count > 0)
+     {for (int i = 0; i < count; i++){stars[i].SetActive(true);}}}
+好，到现在位置愤怒的小鸟部分已经全部制作完毕了，代码部分我只是挑出部分核心代码进行分析，完整的代码还要参看代码附录部分。很多的对象上挂载了unity上不同的组建，这些组建，我只是把他的作用大致介绍了一下。每个组建本身也是有很多不同的属性值需要设置的，这里我就不赘述了，详细的可以参看Unity官方文档资料，只是一个Unity官方的手工编写的资料，也是一个全英文的资料，我自己也在坚持慢慢尝试读，每个组建及其属性都介绍的比较详细，收获也是比较大的。另外也会有部分功能使用了插件来实现的。
+
+
+
+
+2.3记忆力翻牌游戏设计与实现
+2.3.1概要设计
+3.1游戏两两翻牌，一样则记成功一对；不一样，则两张都恢复初始状态。当所有卡牌配对成功后即获得胜利。
+游戏流程：
+1、玩家点击开始游戏后进入游戏；
+2、系统初始化一组卡牌显示到界面上；
+3、系统计时；
+4、玩家点击卡牌将卡牌翻开；
+5、系统检测到当翻开的卡牌为两张时进行评判，若相同则增加计数并判断是否达到指定数量，若不同则两张卡牌均恢复为原始状态。
+3.2 具体规则：
+1、需在规定时间内完成游戏，否则系统提示游戏失败；
+2、当有两张卡牌被翻开时，需等待2秒后才能对其他卡牌进行点击，在2秒内对其他卡牌的点击都是无效的。
+3.2本游戏只有一个场景04—MemoryCard,截图如下：
+     图1游戏未运行的原始场景图  图2玩家刚进入游戏界面图  图3 玩家玩游戏界面图
+
+3.3 场景分析
+记忆力翻牌游戏的结构比较简单，由上图1可以看到分为两部分，左边包括记忆力翻牌Logo，以及两个Button.右边是一个Panel，里面有12张卡牌，共6张相同的卡牌，每张卡牌2组。12张卡牌的位置是随机生成的，每次翻出两张牌之后，游戏暂停两秒进行判断，如果两张牌的图片相同，则翻牌成功，否则翻牌失败，继续翻牌。
+
+2.3.2详细设计
+1.右部的panel中添加了两个Unity自带的组建Gird Layout Group和Content Size Fitter。Gird Layout Group是一个控制表格布局的组建，当其下有子物体的时候，这个组建会对其自动按照是事先设置的间距自动布局。如上图2和3。在Padding中，设置上下左右四周的间距，Cell Size中设置每个子物体本身的宽和高。Spacing用与设置每个子物体周边的间距包括X轴和Y轴。而Content Size Fitter组建的作用是控制Grid Layout Group 组建中的子物体能在水平和垂直方向自适应。
+2.现在相当于我们已经做好了翻牌游戏的框架，现在只需要做一个Card类和一个CardManager类即可。
+现在首先制作Card类，然后为其挂在Card.CS的脚本，然后把这个做成Prefab.至于Prefab的作用，我已经在愤怒的小鸟中阐述过了，这里就不赘述了。展示给玩家看的Card,它有两个组建Image和Button组建。下面说一下Cards.CS脚本吧。
+（1）先来分析一下，Card自身应该具有哪些属性：
+ID，卡牌需有唯一标识id，利用同种卡牌id相同，不同卡牌id不同的原理对卡牌配对是否成功做出判断。三种状态：默认的背面图片的样子，被翻出来的图片样子，以及成功以后需要展示的图片样子。根据游戏机制，卡牌存在不能点击的时刻，此时我们需要获取到卡牌Button组件中的属性来设置卡牌能否被点击。
+（2）再来分析一下，作为卡牌，他应该具有的方法：
+翻牌操作，翻牌成功，翻牌不成功，重新把牌盖回去。还应该有个初始化卡牌的方法，即给它传参数ID，FrontImg，BackImg，SuccessImg，如：public void InitCard(int ID, Sprite FrontImg, 		Sprite BackImg,Sprite SuccessImg)
+另外：一张牌自身有三种操作
+    public void SetTurnCard()
+    {  showImg.sprite = frontImg;
+        cardBtn.interactable = false; }
+    public void SetSuccess()
+    { showImg.sprite = successImg;}
+    public void SetRecover()
+    { showImg.sprite = backImg;
+      cardBtn.interactable = true; }
+（3）再来看看Cards_GameManager类吧
+这是一个管理类。首先分析一下他应该具备的属性，之前说过，因为是６组，每组２张，共１２张图片，private const int winCardCouples = 6；　private int curCardCouples = 0;。卡牌每次翻出两张之后，暂停两秒判断是否成功，在这两秒钟时，是不能点击的。所以需要一个布尔值判断。　private bool canPlayerClick = true;成功后和默认的背面展示图片就用同一张即可，但是正面图片应该有６张，放在一个数组里。还需要得到之前制作好的ｃａｒｄ的ｐｒｅｆａｂ。public Sprite BackSprite;　 public Sprite SuccessSprite;　public Sprite[] FrontSprites;
+接下来来看一下，当卡牌被点击的时候的控制事件。
+ private void CardOnClick(Cards card)
+    {
+        if (canPlayerClick)
+        {
+            //先判断是否可以点击，可点击则直接翻牌
+            card.SetTurnCard();
+            //添加到比对数组中
+            FaceCards.Add(card);
+            //如果有两张牌了，则不可再点击，进入协同程序
+            if (FaceCards.Count == 2)
+            {
+                canPlayerClick = false;
+                StartCoroutine(JugdeTwoCards());
+            } }}
+这里再次用到了协程，这里进行了判断，如果玩家翻出的两张牌ID相同，则把牌面置为翻牌成功的图片，如果失败，程序停顿１.５Ｆ，把牌面置为原来默认的背面图，如果玩家翻完所有的牌面，则弹出游戏胜利的面板。
+ IEnumerator JugdeTwoCards()
+    {//获取到两张卡牌对象
+        Cards card1 = FaceCards[0];
+        Cards card2 = FaceCards[1];
+        clickCount++;
+        //对ID进行比对
+        if (card1.ID == card2.ID)
+        {Debug.Log("Success......");
+            //此时会在此处等待0.8秒后再执行下一条语句，协程不影响主程序的进行，这里可以做个小实验，将下面的0.8改成8秒，在Update中打印Time.time会发现不会有停顿的时候
+            yield return new WaitForSeconds(0.8f);
+            card1.SetSuccess();
+            card2.SetSuccess();
+            curCardCouples++;
+            if (curCardCouples == winCardCouples)
+            { win.SetActive(true);} }
+        else
+        {Debug.Log("Failure......");
+            //配对失败等待的时间要更长，因为要让玩家记忆更深刻
+            yield return new WaitForSeconds(1.5f);
+            card1.SetRecover();
+            card2.SetRecover();}
+        FaceCards = new List<Cards>();
+        canPlayerClick = true;}
+
+最后介绍一下，游戏中是如合把６组１２张图片随机放在１２个位置的，其实就是利用了随机数啦。
+while (CardObjs.Count > 0)
+        { //取随机数，左闭右开区间
+            int ran = Random.Range(0, CardObjs.Count);
+            GameObject go = CardObjs[ran];
+    //将对象指定给Panel作为子物体，这样就会被我们的组件自动布局
+            go.transform.parent = CardsView;
+     //local就表示相对于父物体的相对坐标系，此处做校正处理
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localScale = Vector3.one;
+     //从CardObjs列表中移除该索引指向对象，列表对象数量减少1个
+            CardObjs.RemoveAt(ran); }
+
+好了，到这里，所有的游戏制作部分已经完全介绍完毕啦。这里只是给出了各个小游戏核心算法和重点组建的介绍，详细的代码请参看代码附录。
+
+
+三．参考文献
+[1]  朱玉．基于Unity3D漫游系统的设计与研究[J]．信息安全与技术，2014，12：78～81
+[2]  蒋元，蔡胜军，何绍勇，祁玮．基于Unity3D的虚拟地理环境构建[J]．现代计算机(专业版) ，2014，33：52～55
+[3]  郭芳芳，刘志勤．Unity3D在教育游戏中的应用研究[J]．教育观察，2012，10：47～50
+[4]  刘孟全．Unity3D虚拟现实平台的重放功能设计[J]．广西科学院学报，2013，01：34～36
+[5]  何岗，李俊，张锋．基于Unity3D的消防3D情景实训系统的设计与实现[J]．软件产业与工程，2014，06：43～48
+[6]  赵治羽，陈倩云，李婷婷，张娟．基于遗传算法的Unity3D装箱系统设计[J]．计算机与现代化，2014，06：141～144+149
+[7]  熊耀．基于Unity3D粒子系统的三维影视特效开发研究[J]．软件导刊，2012，11：134～136
+[8]  张典华，陈一民，李磊．基于Unity3D的多平台三维空战游戏的开发[J]．计算机技术与发展，2014，01：192～195
+[9]  陈豪．基于Unity3D的Android飞行类游戏设计[J]．电脑知识与技术，2015，30：168～170
+[10] 干建松．基于Unity3d的室内漫游的关键技术研究[J]．盐城工学院学报(自然科学版) ，2011，04：56～59
+[11] Andrew Stellman and Jennierfer Greene.Head First C#[M]．北京：中国电力出版社，2013：216～263
+[12] J．G．Liu．Applied Research of Somatosensory Game Based on Kinect and Unity 3D Data Integration Technology[J]． Applied Mechanics and Materials， 2014，667：177～182
+
+四．总结
+在三款游戏中，记忆力翻牌游戏是最简单的一款，实现逻辑也是比较简单的。2048游戏的界面搭建是比较简单的，但是实现逻辑比较复杂点。第一次完成这个游戏的编写完成运行起来时，出现了很多的小Bug,基本上都是都是因为边界的问题没有考虑完全，很多的测试修BUG的过程，我在游戏设计与实现的时候也有顺便阐述。另外愤怒的小鸟游戏的难度远远大于2048，不论时算法的逻辑还是界面的搭建，动画的创建，使用以及维护等等都是在三款游戏中最难的。并且愤怒的小鸟里面很多的物理属性都是Unity自带的组建，这样真的给我们的编程带来了极大的便利。游戏中所有的我们看得见的物体即UI显示，都是用2D图片拼成的界面，被我们称为对象，在利用相关脚本组建控制这些图片实现各种功能
+至于代码部分我只是挑出部分核心代码进行分析，完整的代码还要参看代码附录部分。很多的对象上挂载了unity上不同的组建，这些组建，我只是把他的作用大致介绍了一下。每个组建本身也是有很多不同的属性值需要设置的，这里我就不赘述了，详细的可以参看Unity官方文档资料，只是一个Unity官方的手工编写的资料，也是一个全英文的资料，我自己也在坚持慢慢尝试读，每个组建及其属性都介绍的比较详细，收获也是比较大的。另外也会有部分功能使用了插件来实现的。
+通过这三款小游戏的设计与实现，我也学习到关于Unity的入门级的使用。当然我知道Unity的功能是十分强大的，我在以后的时间里，也会不断的找一些小项目练手，做到学以致用。在这次的学习过程中，我也学会了很多自学的方法，比如：官方网站的资料 ，虽然都是全英文的，但是自己应该努力学着去看，因为Unity官网的资料真的是比较全面的。虽然有很多博主也会有相关的介绍，但别人的东西很多都是经过自己理解以后的成品，对于同一个知识点的阐述可能存在误差，不全面等等。但是例如知乎，CSDN，GiHub等等，这里有无数的大神，他们的文章也是很精华的，完全可以作为补充资料去学习，我应该始终保持一颗探索的精神，谦虚谨慎的态度去学习。另外我们专业的技术更新也是特别快的，我虽然现在留在合肥这种发展不算好的城市，但是也要积极跟一线城市的大神们多学习，时刻了解这些新的技术的存在，很多东西自己多尝试多练手，一味的观望别人的文章也不行。在自学的过程中，我知道应该没事多百度，不要一遇到问题不思考就去问身边的同事，完全依赖别人。因为这样做虽然当时问题解决了，但是对自己的成长并不是太好。还有就是因为自己的能力太有限，有时候自己去百度，因为关键词什么的使用的不够恰当，百度到的结果并不是自己想要的。这个时侯还有一个很好的学习路径就是QQ群。以前上学的时候，并不知道利用这个很好的资源。应该学会加一些相关技术的QQ群，里面总有一些大神，群里也会有很多的学习资料，这也会给自己提供一些学习方面的方向。以上就是我在实习这段时间的一些感想吧。
+最后在这次的毕业设计中，也很感谢我的指导老师徐宁老师对我的帮助。因为实习的公司比较忙，经常加班赶进度之类的，徐老师还是很体贴照顾我们大家，谢谢徐老师！
+
+
+
+
+五．代码附录
+1.大厅代码
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class Lobby_GameManager : MonoBehaviour
+{
+    //获得界面中的三个GameObject,设置后面的玩法规则和关于界面
+    public GameObject Bg;
+    public GameObject GameRule;
+    public GameObject About;
+    public GameObject xialacaidan;
+    public void Enter_MemoryCard()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
+    public void Enter_2048()
+    {
+          SceneManager.LoadSceneAsync(5);
+    }
+    public void Enter_AngryBird()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+    public void Btn_Quit()
+    {
+#if UNITY_EDTTOR
+        UnityEditor.EditorApplication.isPlaying=false;
+#else
+        Application.Quit();
+#endif
+    }
+    //主界面
+    public void Backmain()
+    {
+        Bg.SetActive(true);
+        GameRule.SetActive(false);
+        About.SetActive(false);
+        xialacaidan.SetActive(false);
+    }
+    //游戏规则
+    public void SetGameRule()
+    {
+        //Bg.SetActive(false);
+        GameRule.SetActive(true);
+        About.SetActive(false);
+    }
+    //关于
+    public void SetAbout()
+    {
+       // Bg.SetActive(false);
+        GameRule.SetActive(false);
+        About.SetActive(true);
+    }
+    //展示下拉菜单
+    public void Xialacaidan()
+    {
+        xialacaidan.SetActive(true);
+        GameRule.SetActive(false);
+        About.SetActive(false);
+    }}
+2.记忆力卡牌游戏代码
+2.1.Card类
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Cards : MonoBehaviour
+{
+   // get和set是对象属性特有的两个方法，属性是对字段的封装，这里是为了程序数据的安全性考虑的
+    public int ID
+    {
+        get { return id; }
+    }
+    //卡牌需有唯一标识id
+    //利用同种卡牌id相同，不同卡牌id不同的原理对卡牌配对是否成功做出判断
+    private int id;
+    //卡牌会有三种显示情况：未被翻开状态，被翻开状态，配对成功状态。
+    //这三种状态用不同的图片来区分，均为Sprite类型；
+    private Sprite frontImg;
+    private Sprite backImg;
+    private Sprite successImg;
+    //卡牌有不同状态图片，都需要指定给卡牌的Image组件才能显示
+    //所以我们需要声明Image类型的字段来获取Image组件对象；
+    private Image showImg;
+    //根据游戏机制，卡牌存在不能点击的时刻
+    //此时我们需要获取到卡牌Button组件中的属性来设置卡牌能否被点击
+    public Button cardBtn;
+    public void InitCard(int ID, Sprite FrontImg, Sprite BackImg,Sprite SuccessImg)
+    {
+        this.id = ID;
+        this.frontImg = FrontImg;
+        this.backImg = BackImg;
+        this.successImg = SuccessImg;
+        showImg = GetComponent<Image>();
+        //初始化时，令牌均展示backImg
+        showImg.sprite = this.backImg;
+        cardBtn = GetComponent<Button>();
+    }
+    //一张牌自身有三种操作
+    public void SetTurnCard()
+    {
+        showImg.sprite = frontImg;
+        cardBtn.interactable = false;
+    }
+    public void SetSuccess()
+    {
+        showImg.sprite = successImg;
+       // cardBtn.interactable = false;
+    }
+    public void SetRecover()
+    {
+        showImg.sprite = backImg;
+        cardBtn.interactable = true;
+    }
+}
+
+2.2 Cards_GameManager类
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class Cards_GameManager : MonoBehaviour {
+    private const int winCardCouples = 6;
+    private int curCardCouples = 0;
+    private bool canPlayerClick = true;
+    private int clickCount = 0;
+    public Sprite BackSprite;
+    public Sprite SuccessSprite;
+    public Sprite[] FrontSprites;
+    public GameObject[] stars;
+    public GameObject CardPre;
+    public Transform CardsView;
+    private List<GameObject> CardObjs;
+    private List<Cards> FaceCards;
+    public static Cards_GameManager instance;
+    public GameObject win;
+    // Use this for initialization
+    void Start()
+    {
+        CardObjs = new List<GameObject>();
+        FaceCards = new List<Cards>();
+        //将12张卡牌制作完成后添加到CardObjs数组
+        for (int i = 0; i < 6; i++)
+        {
+            Sprite FrontSprite = FrontSprites[i];
+            for (int j = 0; j < 2; j++)
+            {
+                //实例化对象
+                GameObject go = (GameObject)Instantiate(CardPre);
+                //获取Card组件进行初始化，点击事件由游戏管理器统一处理
+                //所以卡牌的点击事件的监听在管理器指定
+                Cards card = go.GetComponent<Cards>();
+                card.InitCard(i, FrontSprite, BackSprite, SuccessSprite);
+                card.cardBtn.onClick.AddListener(() => CardOnClick(card));
+
+                CardObjs.Add(go);            }        }
+
+        while (CardObjs.Count > 0)
+        {
+            //取随机数，左闭右开区间
+            int ran = Random.Range(0, CardObjs.Count);
+            GameObject go = CardObjs[ran];
+            //将对象指定给Panel作为子物体，这样就会被我们的组件自动布局
+            go.transform.parent = CardsView;
+            //local就表示相对于父物体的相对坐标系，此处做校正处理
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localScale = Vector3.one;
+            //从CardObjs列表中移除该索引指向对象，列表对象数量减少1个
+            CardObjs.RemoveAt(ran);
+        }    }
+
+    private void CardOnClick(Cards card)
+    {
+        if (canPlayerClick)
+        {
+            //先判断是否可以点击，可点击则直接翻牌
+            card.SetTurnCard();
+            //添加到比对数组中
+            FaceCards.Add(card);
+            //如果有两张牌了，则不可再点击，进入协同程序
+            if (FaceCards.Count == 2)
+            {
+                canPlayerClick = false;
+                StartCoroutine(JugdeTwoCards());
+            }        }    }
+    IEnumerator JugdeTwoCards()
+    {
+        //获取到两张卡牌对象
+        Cards card1 = FaceCards[0];
+        Cards card2 = FaceCards[1];
+        clickCount++;
+        //对ID进行比对
+        if (card1.ID == card2.ID)
+        {
+            Debug.Log("Success......");
+            //此时会在此处等待0.8秒后再执行下一条语句
+            //协程不影响主程序的进行，这里可以做个小实验
+            //将下面的0.8改成8秒，在Update中打印Time.time会发现不会有停顿的时候
+            yield return new WaitForSeconds(0.8f);
+            card1.SetSuccess();
+            card2.SetSuccess();
+            curCardCouples++;
+            if (curCardCouples == winCardCouples)
+            {
+                win.SetActive(true);
+            }        }
+        else
+        {
+            Debug.Log("Failure......");
+            //配对失败等待的时间要更长，因为要让玩家记忆更深刻
+            yield return new WaitForSeconds(1.5f);
+            card1.SetRecover();
+            card2.SetRecover();        }
+        FaceCards = new List<Cards>();
+        canPlayerClick = true;
+    }
+    //返回lobby
+    public void BackLobby()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Replay()
+    {
+        SceneManager.LoadScene(4);
+    }
+}
+3.2048游戏代码
+3.1  NewScore类
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class NewScore : MonoBehaviour {
+
+    private Text NewScoreText;
+    int Score;
+
+    void Awake() {
+        NewScoreText = this.transform.Find("ScoreText").GetComponent<Text>();
+    }
+    void Update() {
+        if (NumControler._instance.gameState == NumControler.GameState.Playing) {
+            Score = NumControler._instance.newScore;
+            NewScoreText.text = Score + "";
+        }
+        
+    }
+
+}
+
+3.2  BestHistoryScore类
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class BestHistoryScore : MonoBehaviour {
+
+    int HistoryScore = 0;
+    private Text BestText;
+
+    void Awake() {
+        BestText = this.transform.Find("BestText").GetComponent<Text>();
+    }
+    void Start() {
+        HistoryScore = NumControler._instance.historyScore;
+        BestText.text = HistoryScore+"";
+    }
+}
+
+
+3.3  Num类
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class Num : MonoBehaviour {
+
+    //NumIndex 用来控制新产生的Num图片上面具体的数值
+    public int NumIndex=2;
+    //4*4宫格里面的坐标从（0，0）--（3，3）
+    public int InitX,InitY;
+    public Sprite[] ImageSouce;
+    private Image NumImage;
+    private Transform Mark;
+    //确定是否要销毁Num图片，比如合并以后删除多余的图片
+    public bool isDestory=false;
+    //Num移动所需要的时间
+    public float moveTime = 0.4f;
+
+    void Awake() {
+        NumImage = this.GetComponent<Image>();       
+    }
+    void Start() {
+        Mark = this.transform.parent.Find("Mark").transform;
+        CreateNum();
+        InitPos();
+    }
+    void Update() {
+        UpdateImage();
+    }
+
+    /// <summary>
+    /// iTween这个类库，它主要的功能就是处理模型从起始点到结束点之间运动的轨迹。（移动，旋转，音频，路径，摄像机等）
+    /// 它是一个开源的项目并且完全免费，它们的官网在这里 http://itween.pixelplacement.com/index.php 打开网之后点击右上角Get iTween图标即可，
+    /// 或者在AssetStores商店中直接下载。 
+    /// 我把iTween的源码仔细读了一遍，我感觉与其说它是处理动画的类，不如说它是处理数学的类
+    /// </summary>
+    #region 生成动画-CreateNum
+    private void CreateNum()
+    {
+        //ScaleTo:改变游戏对象的比例大小到提供的值。
+        iTween.ScaleTo(this.gameObject, new Vector3(1, 1, 1), 0.2f);
+    }
+    #endregion
+
+    #region 初始化位置-InitPos
+    private void InitPos() {
+        this.transform.localPosition = new Vector3(Mark.localPosition.x +143 * InitX, Mark.localPosition.y - 123 * InitY, Mark.localPosition.z);
+    }
+    # endregion
+
+    #region 移动位置-UpdatePos(int x,int y)
+    public void UpdatePos(int x,int y)
+    {
+        //通过itween进行移动，但是由于itween只能通过position来移动，会出现适配问题，故尝试编写运动代码
+        // Hashtable args  是以键值对儿的形式保存iTween所用到的参数
+        Hashtable args = new Hashtable();
+        args.Add("time", moveTime);
+        args.Add("islocal", true);
+        //表示示移动的位置。
+        args.Add("position", new Vector3(Mark.localPosition.x + 143 * x, Mark.localPosition.y - 123 * y, Mark.localPosition.z));
+        //处理移动过程中的事件。例如：开始发生移动：onstart  移动结束：oncomplete  移动中:onupdate
+        //移动结束时调用 SetUpXAndY方法
+        args.Add("oncomplete", "SetUpXAndY");
+
+        //以上只是准备工作，下面最终让该对象开始移动
+        iTween.MoveTo(this.gameObject, args);
+
+        InitX = x; InitY = y;
+    }
+    #endregion
+
+    #region 移动完成后设置属性/删除-SetUpXAndY  合并以后删除多余的Num
+    private void SetUpXAndY() {
+        //print("运动完成");
+        //InitPos();
+        //如果要合并删除，就进行删除
+        if (isDestory) {
+            Destroy(this.gameObject);
+        }
+    }
+    #endregion
+
+    #region 根据NumIndex改变NumImage-UpdateImage
+    private void UpdateImage()
+    {
+        NumImage.sprite = ImageSouce[CorrespondImageAndIndex(NumIndex)];
+    }
+    #endregion
+
+    #region 将NumIndex与ImageSouce一一对应-CorrespondImageAndIndex(int NumIndex )
+    private int CorrespondImageAndIndex(int NumIndex ){
+        switch (NumIndex) { 
+            case 2:
+                return 0;
+            case 4:
+                return 1;
+            case 8:
+                return 2;
+            case 16:
+                return 3;
+            case 32:
+                return 4;
+            case 64:
+                return 5;
+            case 128:
+                return 6;
+            case 256:
+                return 7;
+            case 512:
+                return 8;
+            case 1024:
+                return 9;
+            case 2048:
+                return 10;
+            default:
+                return 0;
+        }
+    }
+    #endregion
+}
+
+3.4  NumControler类
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
+
+public class NumControler : MonoBehaviour
+{
+
+    //用户手指滑动的方向
+    public enum TouchDir
+    {
+        Top,
+        Bottom,
+        Right,
+        Left,
+        None  //表示可以生成新的prefab
+    }
+    //游戏的状态
+    public enum GameState
+    {
+        Loading,
+        Playing,
+        End
+    }
+
+    #region 数据检测数组-NumIndexArray-NumAssemblyArray
+    //NumIndexArray  Num图片索引数组   用来存放数值的
+    private int[][] NumIndexArray = new int[4][]{
+        new int[4]{0,0,0,0},
+        new int[4]{0,0,0,0},
+        new int[4]{0,0,0,0},
+        new int[4]{0,0,0,0}
+    };
+
+    //NumAssemblyArray  Num图片集合数组  用来存放GameObject Num
+    private Num[][] NumAssemblyArray = new Num[4][]{
+        new Num[4]{null,null,null,null},
+        new Num[4]{null,null,null,null},
+        new Num[4]{null,null,null,null},
+        new Num[4]{null,null,null,null}
+    };
+    #endregion
+
+    public GameObject NumPrefab;
+    public GameState gameState;
+    //鼠标按下的位置
+    public Vector3 mouseDownPosition;
+    public static NumControler _instance;
+
+    public int newScore = 0;
+    public int historyScore = 0;
+
+    void Awake()
+    {
+        _instance = this;
+        gameState = GameState.Loading;
+        GetHistoryScore();
+    }
+    void Start()
+    {
+        //开始游戏的时候棋盘上有两个Num
+        CreateNum(TouchDir.None);
+        CreateNum(TouchDir.None);
+        //遍历4*4的方格中最大的数字 统计成绩
+        StatisticsScore();
+        gameState = GameState.Playing;
+    }
+    void Update()
+    {
+        #region 状态控制
+        switch (gameState)
+        {
+            case GameState.Loading:
+                break;
+            case GameState.Playing:
+                //检查每次用户鼠标滑动的方向，并让键盘上的所有Num朝着该方向移动
+                CheckAndMoveNum();
+                break;
+            case GameState.End:
+                break;
+        }
+        #endregion 
+
+        #region 按键输出表格
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OutputNumIndexArray();
+        }
+        #endregion   
+    }
+
+    #region 检测鼠标按下并通过鼠标抬起检测方法进行移动-CheckAndMoveNum
+    private void CheckAndMoveNum()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            mouseDownPosition = Input.mousePosition;
+        }
+        if (Input.GetMouseButtonUp(0) == false) return;
+
+        //如果鼠标抬起则 获得鼠标滑动的方向
+        TouchDir touchDir = GetTouchDir();
+        //让棋盘上的所有Num朝着鼠标滑动的方向移动
+        ToMove(touchDir);
+    }
+    #endregion
+
+    #region 判断鼠标滑动方向- GetTouchDir
+    private TouchDir GetTouchDir()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            //print(0);
+            Vector3 TouchOffset = Input.mousePosition - mouseDownPosition;
+            if (Mathf.Abs(TouchOffset.x) >= Mathf.Abs(TouchOffset.y) && Mathf.Abs(TouchOffset.x) > 80)
+            {
+                if (TouchOffset.x > 0)
+                {
+                    return TouchDir.Right;
+                }
+                else if (TouchOffset.x < 0)
+                {
+                    return TouchDir.Left;
+                }
+            }
+            if (Mathf.Abs(TouchOffset.x) < Mathf.Abs(TouchOffset.y) && Mathf.Abs(TouchOffset.y) > 80)
+            {
+                if (TouchOffset.y > 0)
+                {
+                    return TouchDir.Top;
+                }
+                else if (TouchOffset.y < 0)
+                {
+                    return TouchDir.Bottom;
+                }
+            }
+        }
+        return TouchDir.None;
+    }
+    #endregion
+
+    #region 生成Num-CreateNum(TouchDir touchDir)-(int x,int y,int Index)
+    private void CreateNum(TouchDir touchDir)
+    {
+        //SelectEmptyPos  根据不同的情况，选择一个空的位置，返回的是一个坐标
+        Vector2 newPos = SelectEmptyPos(touchDir);
+        //这里9是一个标志，自己定义的，只要大于（3，3）即可，用于判定游戏没有结束还有空位
+        if (newPos.x != 9 || newPos.y != 9)
+        {
+            //实例出一个新的prefab
+            GameObject item = Instantiate(NumPrefab) as GameObject;
+            Num numItem = item.GetComponent<Num>();
+            numItem.NumIndex = 2;
+            //新的x.y坐标是  根据不同的情况，选择一个空的位置-SelectEmptyPos(TouchDir touchDir) 计算出来的
+            numItem.InitX = (int)newPos.x;
+            numItem.InitY = (int)newPos.y;
+            item.transform.parent = this.transform;
+
+            //新生成的prefab 的值均是2
+            NumIndexArray[(int)newPos.x][(int)newPos.y] = 2;
+            NumAssemblyArray[(int)newPos.x][(int)newPos.y] = numItem;
+            //统计分数
+            StatisticsScore();
+        }
+        else
+        {
+            //游戏失败//newX、newY均为9并且TouchDir不为none
+            gameState = GameState.End;
+            bool isEnd1 = true;
+            bool isEnd2 = true;
+            int index = 0;
+
+            #region 循环判断是否有相邻的相同数字
+            for (int x = 0; x < 4; x++)
+            {
+                for (int y = 0; y < 4; y++)
+                {
+                    if (index == 0)
+                    {
+                        index = NumIndexArray[x][y];
+                    }
+                    else
+                    {
+                        if (index != NumIndexArray[x][y])
+                        {
+                            index = NumIndexArray[x][y];
+                        }
+                        else
+                        {
+                            isEnd1 = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            index = 0;
+            for (int y = 0; y < 4; y++)
+            {
+                for (int x = 0; x < 4; x++)
+                {
+                    if (index == 0)
+                    {
+                        index = NumIndexArray[x][y];
+                    }
+                    else
+                    {
+                        if (index != NumIndexArray[x][y])
+                        {
+                            index = NumIndexArray[x][y];
+                        }
+                        else
+                        {
+                            isEnd2 = false;
+                            break;
+                        }
+                    }
+                }
+            }
+            #endregion
+
+            //当棋盘满了以后，如果任然有可以合并的，则游戏状态还是继续状态 
+            if (!isEnd1 || !isEnd2)
+            {
+                gameState = GameState.Playing;
+            }
+            else
+            {
+                //todo 做游戏结束处理
+            }
+            //统计分数
+            StatisticsScore();
+        }
+    }
+
+    //创建一个Num对象，对相关属性进行赋值
+    //被  协成 等待并且在合并时生成新的Num-WaitAndCreateNum(int x,int y,int index,float WaitTime) 引用
+    //携程 被  根据不同的情况，进行移动-ToMove(TouchDir touchDir)  引用
+    private void CreateNum(int x, int y, int Index)
+    {
+        GameObject item = Instantiate(NumPrefab) as GameObject;
+        Num numItem = item.GetComponent<Num>();
+        numItem.NumIndex = Index;
+        numItem.InitX = x;
+        numItem.InitY = y;
+        //  该脚本被挂在在 ChessboardBg
+        item.transform.parent = this.transform;  //所以父物体是ChessboardBg
+        NumIndexArray[x][y] = Index;
+        NumAssemblyArray[x][y] = numItem;
+        //统计分数
+        StatisticsScore();
+    }
+    #endregion
+
+    #region 根据不同的情况，进行移动-ToMove(TouchDir touchDir)
+    private void ToMove(TouchDir touchDir)
+    {
+        switch (touchDir)
+        {
+            case TouchDir.Top:
+                #region ToTop
+                for (int x = 0; x < 4; x++)
+                {
+                    int emptyCount = 0;
+                    Num preNum = null;
+                    for (int y = 0; y < 4; y++)
+                    {
+                        if (NumIndexArray[x][y] == 0)
+                        {
+                            emptyCount++;
+                        }
+                        else
+                        {
+                            //初始Num
+                            if (preNum == null)
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+                            //合并
+                            else if (NumAssemblyArray[x][y].NumIndex == preNum.NumIndex)
+                            {
+                                emptyCount++;
+                                //启动删除标记
+                                NumAssemblyArray[x][y].isDestory = true;
+                                preNum.isDestory = true;
+                                //将响应表格中的引用清除
+
+                                preNum = null;
+                                //延时并创建一个num
+                                //CreateNum(x + emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2);
+                                StartCoroutine(WaitAndCreateNum(x, y - emptyCount, NumAssemblyArray[x][y].NumIndex * 2, NumAssemblyArray[x][y].moveTime));
+                            }
+                            else
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+
+                            //移动
+                            int newX = NumAssemblyArray[x][y].InitX;
+                            int newY = NumAssemblyArray[x][y].InitY - emptyCount;
+                            NumAssemblyArray[x][y].UpdatePos(newX, newY);
+                            if (newX != x || newY != y)
+                            {
+                                NumAssemblyArray[newX][newY] = NumAssemblyArray[x][y];
+                                NumIndexArray[newX][newY] = NumIndexArray[x][y];
+                                NumAssemblyArray[x][y] = null;
+                                NumIndexArray[x][y] = 0;
+                            }
+
+                        }
+                    }
+                }
+                CreateNum(TouchDir.Top);
+                #endregion
+                break;
+            case TouchDir.Bottom:
+                #region ToButtom
+                for (int x = 0; x < 4; x++)
+                {
+                    int emptyCount = 0;
+                    Num preNum = null;
+                    for (int y = 3; y >= 0; y--)
+                    {
+                        if (NumIndexArray[x][y] == 0)
+                        {
+                            emptyCount++;
+                        }
+                        else
+                        {
+                            //初始Num
+                            if (preNum == null)
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+                            //合并
+                            else if (NumAssemblyArray[x][y].NumIndex == preNum.NumIndex)
+                            {
+                                emptyCount++;
+                                //启动删除标记
+                                NumAssemblyArray[x][y].isDestory = true;
+                                preNum.isDestory = true;
+                                //将响应表格中的引用清除
+
+                                preNum = null;
+                                //延时并创建一个num
+                                //CreateNum(x + emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2);
+                                StartCoroutine(WaitAndCreateNum(x, y + emptyCount, NumAssemblyArray[x][y].NumIndex * 2, NumAssemblyArray[x][y].moveTime));
+                            }
+                            else
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+
+                            //移动
+                            int newX = NumAssemblyArray[x][y].InitX;
+                            int newY = NumAssemblyArray[x][y].InitY + emptyCount;
+                            NumAssemblyArray[x][y].UpdatePos(newX, newY);
+                            if (newX != x || newY != y)
+                            {
+                                NumAssemblyArray[newX][newY] = NumAssemblyArray[x][y];
+                                NumIndexArray[newX][newY] = NumIndexArray[x][y];
+                                NumAssemblyArray[x][y] = null;
+                                NumIndexArray[x][y] = 0;
+                            }
+
+                        }
+                    }
+                }
+                CreateNum(TouchDir.Bottom);
+                #endregion
+                break;
+            case TouchDir.Left:
+                #region ToLeft
+                for (int y = 0; y < 4; y++)
+                {
+                    int emptyCount = 0;
+                    Num preNum = null;
+                    for (int x = 0; x < 4; x++)
+                    {
+                        if (NumIndexArray[x][y] == 0)
+                        {
+                            emptyCount++;
+                        }
+                        else
+                        {
+                            //初始Num
+                            if (preNum == null)
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+                            //合并
+                            else if (NumAssemblyArray[x][y].NumIndex == preNum.NumIndex)
+                            {
+                                emptyCount++;
+                                //启动删除标记
+                                NumAssemblyArray[x][y].isDestory = true;
+                                preNum.isDestory = true;
+                                //将响应表格中的引用清除
+
+                                preNum = null;
+                                //延时并创建一个num
+                                //CreateNum(x + emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2);
+                                StartCoroutine(WaitAndCreateNum(x - emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2, NumAssemblyArray[x][y].moveTime));
+                            }
+                            else
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+
+                            //移动
+                            int newX = NumAssemblyArray[x][y].InitX - emptyCount;
+                            int newY = NumAssemblyArray[x][y].InitY;
+                            NumAssemblyArray[x][y].UpdatePos(newX, newY);
+                            if (newX != x || newY != y)
+                            {
+                                NumAssemblyArray[newX][newY] = NumAssemblyArray[x][y];
+                                NumIndexArray[newX][newY] = NumIndexArray[x][y];
+                                NumAssemblyArray[x][y] = null;
+                                NumIndexArray[x][y] = 0;
+                            }
+
+                        }
+                    }
+                }
+                CreateNum(TouchDir.Left);
+                #endregion
+                break;
+            case TouchDir.Right:
+                #region ToRight
+                for (int y = 0; y < 4; y++)
+                {
+                    int emptyCount = 0;
+                    Num preNum = null;
+                    for (int x = 3; x >= 0; x--)
+                    {
+                        if (NumIndexArray[x][y] == 0)
+                        {
+                            emptyCount++;
+                        }
+                        else
+                        {
+                            //初始Num
+                            if (preNum == null)
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+                            //合并
+                            else if (NumAssemblyArray[x][y].NumIndex == preNum.NumIndex)
+                            {
+                                emptyCount++;
+                                //启动删除标记
+                                NumAssemblyArray[x][y].isDestory = true;
+                                preNum.isDestory = true;
+                                //将响应表格中的引用清除
+
+                                preNum = null;
+                                //延时并创建一个num
+                                //CreateNum(x + emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2);
+                                StartCoroutine(WaitAndCreateNum(x + emptyCount, y, NumAssemblyArray[x][y].NumIndex * 2, NumAssemblyArray[x][y].moveTime));
+                            }
+                            else
+                            {
+                                preNum = NumAssemblyArray[x][y];
+                            }
+
+                            //移动
+                            int newX = NumAssemblyArray[x][y].InitX + emptyCount;
+                            int newY = NumAssemblyArray[x][y].InitY;
+                            NumAssemblyArray[x][y].UpdatePos(newX, newY);
+                            if (newX != x || newY != y)
+                            {
+                                NumAssemblyArray[newX][newY] = NumAssemblyArray[x][y];
+                                NumIndexArray[newX][newY] = NumIndexArray[x][y];
+                                NumAssemblyArray[x][y] = null;
+                                NumIndexArray[x][y] = 0;
+                            }
+
+                        }
+                    }
+                }
+                CreateNum(TouchDir.Right);
+                #endregion
+                break;
+        }
+    }
+    #endregion
+
+    #region 根据不同的情况，选择一个空的位置-SelectEmptyPos(TouchDir touchDir)  返回值类型：Vector2(newX, newY)
+
+    //返回值还未设置
+    private Vector2 SelectEmptyPos(TouchDir touchDir)
+    {
+        //若输出9，9；则已经没有空位，游戏结束  这里只是一个标志位，超过（3，3)以外的值都可以
+        int newX = 9, newY = 9;
+        if (touchDir == TouchDir.Top)
+        {
+            #region moveToTop
+            int emptyNumCount = 0;
+            int y = 3;
+            for (int x = 0; x < 4; x++)
+            {
+                if (NumIndexArray[x][y] == 0)
+                {
+                    emptyNumCount++;
+                }
+            }
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+                int count = 0;
+                for (int x = 0; x < 4; x++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    {
+                        count++;
+                        if (count == randomIndex)
+                        {
+                            //因为一开始newX和NewY被赋值9，而四宫格里没有（9，9)这个坐标，所以创建新的Num Prefab是不成功的
+                            //当棋盘里还有空位，这段代码就会被执行，从而赋新的坐标位置的值
+                            newX = x;
+                            newY = y;
+                        }
+                    }
+                }
+            }
+            #endregion
+
+        }
+        else if (touchDir == TouchDir.Bottom)
+        {
+            #region moveToBottom
+            int emptyNumCount = 0;
+            int y = 0;
+            for (int x = 0; x < 4; x++)
+            {
+                if (NumIndexArray[x][y] == 0)
+                {
+                    emptyNumCount++;
+                }
+            }
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+                int count = 0;
+                for (int x = 0; x < 4; x++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    {
+                        count++;
+                        if (count == randomIndex)
+                        {
+                            newX = x;
+                            newY = y;
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        else if (touchDir == TouchDir.Right)
+        {
+            #region moveToRight
+            int emptyNumCount = 0;
+            int x = 0;
+            for (int y = 0; y < 4; y++)
+            {
+                if (NumIndexArray[x][y] == 0)
+                {
+                    emptyNumCount++;
+                }
+            }
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+                int count = 0;
+                for (int y = 0; y < 4; y++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    {
+                        count++;
+                        if (count == randomIndex)
+                        {
+                            newX = x;
+                            newY = y;
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        else if (touchDir == TouchDir.Left)
+        {
+            #region moveToLeft
+            int emptyNumCount = 0;
+            int x = 3;
+            for (int y = 0; y < 4; y++)
+            {
+                if (NumIndexArray[x][y] == 0)
+                {
+                    emptyNumCount++;
+                }
+            }
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+                int count = 0;
+                for (int y = 0; y < 4; y++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    {
+                        count++;
+                        if (count == randomIndex)
+                        {
+                            newX = x;
+                            newY = y;
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        else if (touchDir == TouchDir.None)
+        {
+            #region AddOne
+            int emptyNumCount = 0;
+            for (int x = 0; x < 4; x++)
+            {
+                for (int y = 0; y < 4; y++)
+                {
+                    if (NumIndexArray[x][y] == 0)
+                    {
+                        emptyNumCount++;
+                    }
+                }
+            }
+
+            //Debug.LogError("开局创建第一个Num,查看emptyNumCount：  " + emptyNumCount);
+            if (emptyNumCount != 0)
+            {
+                int randomIndex = Random.Range(1, emptyNumCount + 1);
+               // Debug.LogError("产生的随机数为：  " + randomIndex);
+                int Count = 0;
+                for (int x = 0; x < 4; x++)
+                {
+                    for (int y = 0; y < 4; y++)
+                    {
+                        if (NumIndexArray[x][y] == 0)
+                        {
+                            Count++;
+                            if (Count == randomIndex)
+                            {
+                                newX = x;
+                                newY = y;
+                             //   Debug.LogError("第一个Num的位置(newX,newY)：  " + newX + newY);
+                            }
+                        }
+                    }
+                }
+            }
+            #endregion
+
+        }
+        return new Vector2(newX, newY);
+    }
+    #endregion
+
+    #region 输出数组表格-OutputNumIndexArray
+    private void OutputNumIndexArray()
+    {
+        string s = "";
+        for (int y = 0; y < 4; y++)
+        {
+            for (int x = 0; x < 4; x++)
+            {
+                s = s + NumIndexArray[x][y] + "  ";
+            }
+            s = s + "\r\n";
+        }
+        print(s);
+    }
+    #endregion
+
+    #region 等待并且在合并时生成新的Num-WaitAndCreateNum(int x,int y,int index,float WaitTime)
+    //这里的携程在根据不同的情况进行移动的时候被调用
+    IEnumerator WaitAndCreateNum(int x, int y, int index, float WaitTime)
+    {
+        WaitTime -= 0.2f;
+        yield return new WaitForSeconds(WaitTime);
+        CreateNum(x, y, index);
+    }
+    #endregion
+
+    #region 统计分数-StatisticsScore  遍历4*4的方格中最大的数字
+    private void StatisticsScore()
+    {
+        int score = 0;
+        for (int x = 0; x < 4; x++)
+        {
+            for (int y = 0; y < 4; y++)
+            {
+                score += NumIndexArray[x][y];
+            }
+        }
+        newScore = score;
+        SetHistoryScore();
+    }
+    #endregion
+
+    #region 获取历史最高纪录-GetHistoryScore
+    private void GetHistoryScore()
+    {
+        int HScore = PlayerPrefs.GetInt("HistoryScore", 0);
+        historyScore = HScore;
+    }
+    #endregion
+
+    #region 设置历史记录-SetHistoryScore
+    private void SetHistoryScore()
+    {
+        if (newScore > historyScore)
+        {
+            PlayerPrefs.SetInt("HistoryScore", newScore);
+        }
+    }
+    #endregion
+
+    #region 返回大厅
+    public void GoBackLobby()
+    {
+        SceneManager.LoadScene(0);
+    }
+    #endregion
+
+}
+3.5  StartButton类
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+
+public class StartButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler{
+
+    private Transform ButtonStart;
+    private Image ButtonImage;
+
+    //判断用户是否在拖动滚动条的状态
+    private bool isPointerDown;
+    private Vector3 InitMousePos;
+
+
+    void Awake() {
+        ButtonStart = this.transform.Find("Start").transform;
+        ButtonImage=ButtonStart.GetComponent<Image>();
+    }
+    void Start() {
+        ButtonStart.localPosition = new Vector3(-90f, ButtonStart.localPosition.y, ButtonStart.transform.localPosition.z);
+        InitMousePos = Vector3.zero; 
+    }
+    void Update() {
+        UpdateButton();
+    }
+
+    //根据X值来改变游戏状态
+    private void UpdateButton()
+    {
+        //当前用户正在拖动滚动条
+        if (isPointerDown)
+        {
+           // Debug.LogError("1");
+            //判断如果滚动条已经移出范围了
+            if (ButtonStart.localPosition.x >90f || ButtonStart.localPosition.x < -90f)
+            {
+                float newX = (Mathf.Abs(ButtonStart.localPosition.x) / ButtonStart.localPosition.x) *90f;
+                if (newX >= 0) {
+                   // Debug.LogError("2");
+                    ButtonImage.color = new Color(104, 255, 0, 255);
+                }
+                ButtonStart.localPosition = new Vector3(newX, ButtonStart.localPosition.y, ButtonStart.transform.localPosition.z);
+            }
+        }
+        //用户没有滑动滚动条时
+        else
+        {
+            //得到x的初始位置，即起点-90   中间0    终点90
+          //  Debug.LogError("3");
+            float x = ButtonStart.localPosition.x;
+            //判断y 是否介于中间到末端
+            if (x >= 0)
+            {
+                //控制最终的终点坐标
+                ButtonStart.localPosition = new Vector3(90f, ButtonStart.localPosition.y, ButtonStart.transform.localPosition.z);
+               // Debug.LogError("4");
+                ButtonImage.color = new Color(104, 255, 0, 255);
+            }
+            //否则  y介于起点至中间段
+            else
+            {
+                
+               // Debug.LogError("5");
+                ButtonStart.localPosition = new Vector3(-90f, ButtonStart.localPosition.y, ButtonStart.transform.localPosition.z);
+            }
+            //如果其x的坐标==90f,则跳转到游戏界面
+            if (ButtonStart.localPosition.x == 90f) {
+                this.GetComponent<ScrollRect>().enabled = false;
+                StartCoroutine(WaitAndSkip());
+               // Debug.LogError("6");
+            }
+            
+        }
+    }
+    
+    //控制场景等待、跳转
+    private IEnumerator WaitAndSkip() {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(6);
+    }
+
+
+    //检测鼠标按下与抬起
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        //Debug.LogError("OnPointerDown");
+        isPointerDown = true;
+    }
+    public void OnPointerUp(PointerEventData eventData) {
+      //  Debug.LogError("OnPointerUp");
+        isPointerDown = false;
+    }
+}
+
+
+
+4.愤怒的小鸟代码
+4.1  Bird
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+/// <summary>
+/// 这个脚本用来控制小鸟的移动，即用鼠标拖拽小鸟发射的距离
+/// </summary>
+public class Bird : MonoBehaviour {
+    //检测鼠标舒服按下
+    private bool isClick = false;
+
+    //最远距离3米
+    public float maxDis = 3;
+    [HideInInspector]   //表示sp 变量虽然是public类型，但是在面板中不可见
+    public SpringJoint2D sp;
+    protected Rigidbody2D rg;   //便于子类可以调用
+
+    //划线做弹弓
+    public LineRenderer right;
+    public Transform rightPos;
+    public LineRenderer left;
+    public Transform leftPos;
+
+    //小鸟的特效
+    public GameObject boom;
+
+    //小鸟的拖尾特效
+    protected TestMyTrail myTrail;
+    //控制小鸟在飞出去以后便不能移动了
+    [HideInInspector]
+    public bool canMove = false;
+    //设定相机跟随小鸟移动的平滑度的值
+    public float smooth = 3;
+
+    //设置小鸟的音效
+    public AudioClip select;
+    public AudioClip fly;
+    //用来控制小黄鸟在飞出之后，碰撞之前，假如点击鼠标左键，可以加速,调用飞出函数以后变为true
+    private bool isFly = false;
+    [HideInInspector]
+    public bool isReleased = false;  //是否释放了小鸟
+
+    //受伤以后的小鸟
+    public Sprite hurt;
+    protected SpriteRenderer render;
+
+    private void Awake()
+    {
+        sp = GetComponent<SpringJoint2D>();
+        rg = GetComponent<Rigidbody2D>();
+        myTrail = GetComponent<TestMyTrail>();
+        render = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnMouseDown()//鼠标按下
+    {
+        if (canMove)
+        {
+            //当鼠标按下一下，播放小鸟被选中的音乐
+            AudioPlay(select);
+            //检测鼠标是否被按下
+            isClick = true;
+            //开启动力学，不受物理控制，(但是飞出的角度和力度都是可以控制的)否则小鸟飞出时的感觉有种横冲直撞的感觉
+            //(但是要稍微延迟一下，如果计算的时间太短了，小鸟飞不出去)
+            rg.isKinematic = true;
+        }
+    }
+
+
+    private void OnMouseUp() //鼠标抬起
+    {
+        if (canMove)
+        {
+            isClick = false;
+            rg.isKinematic = false;
+            //延时的时间不能太长，否则小鸟就会被弹回来
+            Invoke("Fly", 0.1f);
+            //禁用划线组件
+            right.enabled = false;
+            left.enabled = false;
+            canMove = false;
+        }
+
+    }
+
+
+    private void Update()
+    {
+        //判断是否点击到了UI
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
+        if (isClick)
+        { //如果鼠标按下，就让小鸟跟随鼠标移动
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //transform.position += new Vector3(0, 0, 10);
+            transform.position += new Vector3(0,0,-Camera.main.transform.position.z);
+           
+            // Vector3.Distance()  用来计算两个向量之间的位移（距离）
+            //if  用来对位置限定
+            if (Vector3.Distance(transform.position, rightPos.position) > maxDis)
+            { //进行位置限定
+                //向量单位化
+                Vector3 pos = (transform.position - rightPos.position).normalized;
+                //设置向量的最大长度
+                pos *= maxDis;
+                transform.position = pos + rightPos.position;
+            }
+            //划线
+            Line();
+        }
+
+
+        //相机跟随小鸟平滑移动
+        float posX = transform.position.x;
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position,new Vector3(Mathf.Clamp(posX,0,15),Camera.main.transform.position.y, 
+            Camera.main.transform.position.z),smooth*Time.deltaTime);
+
+
+        if (isFly) {
+            if (Input.GetMouseButtonDown(0)) {
+                //调用炫技函数
+                ShowSkill();
+            }
+        }
+    }
+
+    void Fly()
+    {
+        isReleased = true;
+        isFly = true;
+        //当小鸟飞行时，播放小鸟飞行的音乐
+        AudioPlay(fly);
+        myTrail.StartTrails();
+        //当鼠标抬起时，小鸟就要飞出
+        sp.enabled = false;
+        Invoke("Next", 5);
+    }
+
+    /// <summary>
+    /// 划线做弹弓线操作
+    /// </summary>
+    void Line()
+    {
+        //启用划线
+        right.enabled = true;
+        left.enabled = true;
+
+        //画右边树枝和小鸟之间的线
+        right.SetPosition(0, rightPos.position);
+        right.SetPosition(1, transform.position);
+
+        //画左边树枝和小鸟之间的线
+        left.SetPosition(0, leftPos.position);
+        left.SetPosition(1, transform.position);
+    }
+
+    /// <summary>
+    /// 处理下一只小鸟的飞出（上一只小鸟飞出后就要消失）
+    /// </summary>
+    /// 
+    protected virtual void Next()
+    {
+        GameManager._instance.birds.Remove(this);
+        Destroy(gameObject);
+        Instantiate(boom, transform.position, Quaternion.identity);
+        GameManager._instance.NextBird();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //小黄鸟的加速炫技必须在碰撞物体之前
+        isFly = false;
+        myTrail.ClearTrails();
+    }
+
+    //播放音乐的方法
+    public void AudioPlay(AudioClip clip) {
+        AudioSource.PlayClipAtPoint(clip,transform.position);
+    }
+
+
+    /// <summary>
+    /// 小黄鸟在飞出之后碰撞之前可以加速的炫技操作
+    /// </summary>
+    public virtual void ShowSkill() {
+        isFly = false;
+    }
+
+    //小鸟碰撞到木块或小猪就受伤了
+    public void Hurt() {
+        
+        render.sprite = hurt;
+    }
+}
+
+4.2  BlackBird
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BlackBird : Bird {
+
+    public  List<Pig> blocks = new List<Pig>();
+
+    /// <summary>
+    /// 进入触发区域
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy") {
+            blocks.Add(collision.gameObject.GetComponent<Pig>());
+        }
+    }
+
+    /// <summary>
+    /// 离开触发区域
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            blocks.Remove(collision.gameObject.GetComponent<Pig>());
+        }
+    }
+
+
+    public override void ShowSkill()
+    {
+        base.ShowSkill();
+        if (blocks.Count > 0 && blocks != null) {
+            for (int i = 0; i < blocks.Count; i++) {
+                blocks[i].Dead();
+            }
+        }
+        OnClear();
+    }
+
+    void OnClear() {
+        rg.velocity = Vector3.zero;
+        Instantiate(boom,transform.position,Quaternion.identity);
+        //产生爆炸特效以后，把这个小鸟的组件禁用掉，并清理后续特效
+        render.enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
+        myTrail.ClearTrails();
+             
+    }
+
+    protected override void Next()
+    {
+        GameManager._instance.birds.Remove(this);
+        Destroy(gameObject);
+        GameManager._instance.NextBird();
+    }
+}
+
+4.3  YellowBird
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class YellowBird : Bird {
+
+    /// <summary>
+    /// 重写方法
+    /// </summary>
+    public override void ShowSkill()
+    {
+        base.ShowSkill();
+        rg.velocity *= 2;
+    }
+
+}
+
+4.4  GreenBird
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GreenBird : Bird {
+    //小绿鸟有回旋特技
+    public override void ShowSkill()
+    {
+        base.ShowSkill();
+        Vector3 speed = rg.velocity;
+        speed.x *= -1;
+        rg.velocity = speed;
+    }
+}
+
+4.5  Pig
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Pig : MonoBehaviour {
+
+    public float maxSpeed = 10;
+    public float minSpeed = 5;
+    private SpriteRenderer render;
+    public Sprite hurt;
+    public GameObject boom;
+    public GameObject score;
+
+    //设置猪的两个音乐受伤和死亡以及小鸟碰撞的音乐
+    public AudioClip hurtClip;
+    public AudioClip dead;
+    public AudioClip birdCollision;
+
+    public bool isPig = false;
+
+    private void Awake()
+    {
+        render = GetComponent<SpriteRenderer>();
+    }
+
+    //碰撞检测  要求两个游戏物体都需要rigidBody 2D和碰撞盒
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //print(collision.relativeVelocity.magnitude);
+        //如果小鸟碰撞到其他东西则播放小鸟受伤的声音
+        if (collision.gameObject.tag == "Player") {
+            AudioPlay(birdCollision);
+            collision.transform.GetComponent<Bird>().Hurt();
+        }
+
+        //如果两者的相对速度> 最大速度，小猪直接死亡（消失了）
+        if (collision.relativeVelocity.magnitude > maxSpeed)//直接死亡
+        {
+            Dead();
+        }
+        //如果两者的相对速度介于最大和最小速度之间，小猪受伤  （小猪的图片更换成受伤的图片）
+        else if (collision.relativeVelocity.magnitude > minSpeed && collision.relativeVelocity.magnitude < maxSpeed) {
+            render.sprite = hurt;
+            AudioPlay(hurtClip);
+        }
+    }
+
+    //触发检测  只要求其中一个游戏物体需要rigidBody 2D和碰撞盒（但碰撞盒的is Trigger属性为true）
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+    }
+
+    //处理猪的死亡后事，猪消失，产生爆炸特效
+    public void Dead() {
+        if (isPig)
+        {
+            GameManager._instance.pig.Remove(this);
+        }
+        Destroy(gameObject);
+        Instantiate(boom, transform.position, Quaternion.identity);
+
+        //生成分数,并与1.5秒以后分数消失
+        GameObject go = Instantiate(score, transform.position + new Vector3(0,0.5f,0), Quaternion.identity);
+        Destroy(go, 1.5f);
+        //播放猪死亡的音乐
+        AudioPlay(dead);
+    }
+
+    //播放音乐的方法
+    public void AudioPlay(AudioClip clip)
+    {
+        AudioSource.PlayClipAtPoint(clip, transform.position);
+    }
+
+}
+
+4.6  Boom
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Boom : MonoBehaviour {
+    //当动画播放完，这个游戏物体就要消失
+    public void destroying()
+    {
+
+        Destroy(gameObject);
+    }
+}
+
+4.7  PausePanel
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PausePanel : MonoBehaviour
+{
+    //获取面板自身的动画状态集
+    private Animator anim;
+    //当点击了暂停按钮后，游戏暂停，暂停按钮也要隐藏
+    public GameObject button;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+
+    public void Retry() {
+
+        Time.timeScale = 1;    //在继续状态
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
+    /// <summary>
+    /// 点击了pause按钮
+    /// </summary>
+    public void Pause()
+    {
+        //1、播放pause动画  
+        anim.SetBool("isPause", true);
+        button.SetActive(false);
+
+        if (GameManager._instance.birds.Count > 0)
+        {
+            if (GameManager._instance.birds[0].isReleased == false)  //小鸟没有飞出，点击暂停按钮小鸟不可以飞出
+            {
+                GameManager._instance.birds[0].canMove = false;
+            }
+        }
+    }
+
+ 
+    /// <summary>
+    /// 点击了继续按钮
+    /// </summary>
+    public void Resume() {
+        //1、播放resume动画
+        Time.timeScale = 1;
+        anim.SetBool("isPause", false);
+
+        if (GameManager._instance.birds.Count > 0)
+        {
+            if (GameManager._instance.birds[0].isReleased == false)  //小鸟没有飞出，点击暂停按钮小鸟不可以飞出
+            {
+                GameManager._instance.birds[0].canMove = true;
+            }
+        }
+    }
+
+    public void Home()
+    {
+        Time.timeScale = 1;    //在继续状态
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+
+
+    /// <summary>
+    /// pause动画播放完调用
+    /// </summary>
+    public void PauseAnimEnd() {
+        Time.timeScale = 0;   //暂停
+    }
+    /// <summary>
+    /// resume动画播放完调用
+    /// </summary>
+    public void ResumeAnimEnd() {
+        button.SetActive(true);
+    }
+   
+}
+
+4.8  MapSelect
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>
+/// 本脚本用于对关卡的设置的选择
+/// </summary>
+public class MapSelect : MonoBehaviour {
+    //用于存储每个关卡可以解锁星星的数量
+    public int starsNum = 0;
+    //用于判断该关卡是否可以解锁
+    private bool isSelect = false;
+    //每个关卡下面的的两个图片
+    public GameObject locks;
+    public GameObject stars;
+
+    // 点击每个map关卡，进入关卡详情（小关卡的选择）小关卡放在关卡Panel中
+    public GameObject panel;
+    public GameObject map;
+    //用来显示每个关卡  获得的星星 / 总共需要的星星
+    public Text starsText;
+    //每个小关卡名目前共制作了三个map,9关
+    public int startNum = 1;
+    public int endNum = 3;
+
+
+    private void Start()
+    {
+        //PlayerPrefs.DeleteAll();
+        //PlayerPrefs 是unity自带的存储数据的方法，是用键值对来存储，一个键对应一个值，利用键来找值
+        if (PlayerPrefs.GetInt("totalNum", 0) >= starsNum) {
+            isSelect = true;
+        }
+
+        if (isSelect) {
+            locks.SetActive(false);
+            stars.SetActive(true);
+
+            //TODo:text显示
+            int counts = 0; 
+            for (int i = startNum; i <= endNum; i++) {
+                counts += PlayerPrefs.GetInt("level"+i.ToString(),0);
+            }
+            starsText.text = counts.ToString() + "/60";
+        }
+    }
+    /// <summary>
+    /// 鼠标点击
+    /// </summary>
+    public void Selected()
+    {
+        if (isSelect) {
+            panel.SetActive(true);
+            map.SetActive(false);
+        }
+    }
+
+    public void panelSelect() {
+        panel.SetActive(false);
+        map.SetActive(true);
+    }
+}
+
+4.9  Loadlevel
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+/// <summary>
+/// 该脚本放在02-Game场景下，用来加载各个关卡的场景（各个关卡的场景做成了Prefabs,放在Resources文件夹下面）
+/// </summary>
+public class Loadlevel : MonoBehaviour {
+
+    private void Awake()
+    {
+        Instantiate(Resources.Load(PlayerPrefs.GetString("nowLevel"))); 
+    }
+}
+
+4.10  LoadLevelAsync
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class LoadLevelAsync : MonoBehaviour {
+
+    // Use this for initialization
+    void Start() {
+        //因为不同的手机分辨率不同，暂且写死分辨率，免得在不同的手机显示不一样
+        Screen.SetResolution(1920,1080,false);     //三个参数：宽度，高度，是否全屏
+        //因为我的游戏资源比较小，加载时间特别短，为了能让玩家看清楚我的加载界面，所以延时2秒加载
+        Invoke("Load",1);
+    }
+
+    void Load() {
+        //这里利用异步加载游戏的方式，一般大型游戏里面资源比较多，加载的时间比较久，
+        //利用一步加载的方式分散用户注意力，可以更好的提高用户体验
+        SceneManager.LoadSceneAsync(2);
+        }
+    }
+
+
+4.11  GameManager
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class GameManager : MonoBehaviour {
+
+    public List<Bird> birds;
+    public List<Pig> pig;
+    public static GameManager _instance;
+    private Vector3 originPos; //初始化的位置  第一只弹弓上的小鸟的的位置
+    //win和lose 两个面板
+    public GameObject win;
+    public GameObject lose;
+    //储存一个关卡结束以后，界面所展示的星星
+    public GameObject[] stars;
+    //用于存储各个关卡的星星的数量
+    private int starsNum = 0;
+    //目前所打算设计的关卡总数量
+    private int totalNum = 9;
+
+    private void Awake()
+    {
+        _instance = this;
+        if(birds.Count > 0) {
+            originPos = birds[0].transform.position;
+        }
+    }
+
+    private void Start()
+    {
+        Initialized();
+    }
+
+    /// <summary>
+    /// 初始化小鸟
+    /// </summary>
+    private void Initialized()
+    {
+        //处理多只小鸟时，当第一只小鸟（当前可用），否则让SpringJoint2D和brids脚本不可用
+        for (int i = 0; i < birds.Count; i++)
+        {
+            if (i == 0) //第一只小鸟
+            {
+                birds[i].transform.position = originPos;
+                birds[i].enabled = true;
+                birds[i].sp.enabled = true;
+                birds[i].canMove = true;
+
+            }
+            else
+            {
+                birds[i].enabled = false;
+                birds[i].sp.enabled = false;
+                birds[i].canMove = false;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 判定游戏逻辑
+    /// </summary>
+   public  void NextBird()
+    {
+        if(pig.Count > 0)
+        {
+            if (birds.Count > 0)
+            {
+                //下一只飞吧
+                Initialized();
+            }
+            else
+            {
+                //输了
+                lose.SetActive(true);
+            }
+        }
+        else
+        {
+            //赢了
+            win.SetActive(true);
+        }
+
+    }
+
+    /// <summary>
+    /// 当一关赢了以后，在界面上一颗一颗的展示星星
+    /// </summary>
+    public void ShowStars() {
+        StartCoroutine("show");
+    }
+
+    //协程  使星星能够每隔0.3S，依次显示
+    //startsNum 表示关卡中星星的数量
+    IEnumerator show() {
+        for (; starsNum < birds.Count + 1; starsNum++)
+        {
+            if (starsNum >= stars.Length) {
+                break;
+            }
+            yield return new WaitForSeconds(0.2f);
+            stars[starsNum].SetActive(true);
+        }
+
+      //  print(starsNum);
+    }
+
+    public void Replay() {
+        SaveData();
+        SceneManager.LoadScene(3);
+    }
+
+    public void Home() {
+        SaveData();
+        SceneManager.LoadScene(2);
+    }
+
+    //（1）每一关完成之后的星星数量(int),利用unity自带的PlayerPrefs.SetInt("level+num",星星数)，并且涉及到更新
+    //涉及到下一关是否可以开启，以及level界面星星个数的显示
+
+    //用于存储星星数量的方法
+    public void SaveData() {
+        //如果重新玩的关卡的星星的数量大于之前获得的星星的数量记录，则该关卡的星星个数更新，
+        //否则保持之前的最高纪录，不更新
+        if (starsNum > PlayerPrefs.GetInt(PlayerPrefs.GetString("nowLevel"))){
+            PlayerPrefs.SetInt(PlayerPrefs.GetString("nowLevel"), starsNum);
+        }
+        //（2)存储所有的星星个数  totalNum 遍历所有的星星数，非0的关卡星星数，然后相加
+        int sum = 0;        
+        for (int i = 1; i <= totalNum; i++)
+        {   //从第一关开始遍历
+            sum += PlayerPrefs.GetInt("level" + i.ToString());
+        }
+       
+        PlayerPrefs.SetInt("totalNum",sum);
+        print(PlayerPrefs.GetInt("totalNum"));
+}}
+
+
+4.12  Win
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Win : MonoBehaviour {
+    /// <summary>
+    /// 动画播放完，显示星星
+    /// </summary>
+    public void Show() {
+        GameManager._instance.ShowStars();  //ShowStarts
+    }
+}
+
+
